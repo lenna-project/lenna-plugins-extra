@@ -1,0 +1,5 @@
+{
+    "plugins": {
+        "watermark": "https://lenna.app/lenna-plugins-extra/watermark/remoteEntry.js"
+    }
+}
