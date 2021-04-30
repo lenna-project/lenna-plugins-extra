@@ -1,4 +1,3 @@
-use base64::decode;
 use image::{DynamicImage, GenericImageView};
 use photon_rs::{base64_to_image, helpers::dyn_image_from_raw, multiple::watermark, PhotonImage};
 

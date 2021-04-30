@@ -10,7 +10,7 @@
   },
   "config": {
     "shortname": "watermark",
-    "publicPath": "https://lenna.app/lenna-plugins/watermark/"
+    "publicPath": "https://lenna.app/lenna-plugins-extra/watermark/"
   },
   "keywords": [],
   "author": "",

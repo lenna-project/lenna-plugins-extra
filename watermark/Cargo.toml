@@ -1,9 +1,9 @@
 [package]
 authors = ["Christian <chriamue@gmail.com>"]
 edition = "2018"
-name = "rotate"
+name = "watermark"
 version = "0.1.0"
-description = "Plugin to rotate images."
+description = "Plugin to watermark images."
 license = "MIT"
 
 [lib]
@@ -14,9 +14,8 @@ default = ["plugin"]
 plugin = []
 
 [dependencies]
-base64 = "0.13.0"
 image = { version = "0.23", default-features = false, features = ["png", "jpeg"] }
-photon-rs = "0.3.0"
+photon-rs = "=0.3.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 wasm-bindgen = { version = "0.2", features = ["serde-serialize"] }

@@ -5,8 +5,13 @@
       :style="{ 'background-image': `url(${previewImage})` }"
       @click="selectImage"
     ></div>
-
     <input ref="fileInput" type="file" @input="pickFile" />
+    <div>
+      <label>x: </label>
+      <input type="number" v-model.number="x" @change="updateConfig()" />
+      <label>y: </label>
+      <input type="number" v-model.number="y" @change="updateConfig()" />
+    </div>
   </div>
 </template>
 
@@ -21,7 +26,7 @@ export default defineComponent({
     return {
       previewImage: null,
       x: 0,
-      y: 0
+      y: 0,
     };
   },
   methods: {
@@ -42,20 +47,21 @@ export default defineComponent({
       }
     },
     async updateConfig() {
-      if(!this.previewImage) return;
-      let watermark = this.previewImage.replace("data:image/jpeg;base64,", "").replace("data:image/png;base64,", "");
+      if (!this.previewImage) return;
+      let watermark = this.previewImage
+        .replace("data:image/jpeg;base64,", "")
+        .replace("data:image/png;base64,", "");
       let config = {
         watermark: watermark,
         x: this.x,
-        y: this.y
+        y: this.y,
       };
       this.$emit("changeConfig", config);
     },
   },
   created() {
     this.previewImage = this.defaultConfig.watermark;
-    this.x = this.defaultConfig.x,
-    this.y = this.defaultConfig.y
+    (this.x = this.defaultConfig.x), (this.y = this.defaultConfig.y);
     this.updateConfig();
   },
 });
