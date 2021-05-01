@@ -314,8 +314,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 [[package]]
 name = "lenna_core"
 version = "0.1.0"
-source = "git+https://github.com/lenna-project/lenna-core?branch=main#ce9675251451e5bb11d8d19c0fb6a7d79a8ec548"
+source = "git+https://github.com/lenna-project/lenna-core?branch=main#6eafdb338548d00a24264a2b5c162f0726b52a2f"
 dependencies = [
+ "console_error_panic_hook",
  "dyn-clone",
  "image",
  "paste",
@@ -1108,6 +1109,7 @@ checksum = "d9a543ae66aa233d14bb765ed9af4a33e81b8b58d1584cf1b47ff8cd0b9e4489"
 name = "watermark"
 version = "0.1.0"
 dependencies = [
+ "console_error_panic_hook",
  "image",
  "lenna_core",
  "photon-rs",
