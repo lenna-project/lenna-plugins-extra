@@ -10,7 +10,7 @@ var moduleMap = {
 		return Promise.all([__webpack_require__.e(696), __webpack_require__.e(748), __webpack_require__.e(821)]).then(() => (() => ((__webpack_require__(319)))));
 	},
 	"./Widget": () => {
-		return Promise.all([__webpack_require__.e(748), __webpack_require__.e(741)]).then(() => (() => ((__webpack_require__(741)))));
+		return Promise.all([__webpack_require__.e(748), __webpack_require__.e(456)]).then(() => (() => ((__webpack_require__(456)))));
 	}
 };
 var get = (module, getScope) => {
@@ -286,7 +286,7 @@ __webpack_require__.d(exports, {
 /******/ 	
 /******/ 	
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"741":1,"821":1};
+/******/ 		var cssChunks = {"456":1,"821":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
@@ -796,7 +796,7 @@ __webpack_require__.d(exports, {
 /******/ 					promises.push(installedWasmModuleData);
 /******/ 				else {
 /******/ 					var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 					var req = fetch(__webpack_require__.p + "" + {"333":{"641":"999323e88953b2352e22"}}[chunkId][wasmModuleId] + ".module.wasm");
+/******/ 					var req = fetch(__webpack_require__.p + "" + {"333":{"641":"1ce29697c38572e7d861"}}[chunkId][wasmModuleId] + ".module.wasm");
 /******/ 					var promise;
 /******/ 					if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 						promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {

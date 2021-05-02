@@ -71,14 +71,14 @@ module.exports = detectEthereumProvider;
 
 /***/ }),
 
-/***/ 78:
+/***/ 948:
 /***/ (() => {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
 
-/***/ 741:
+/***/ 456:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -87,11 +87,11 @@ module.exports = detectEthereumProvider;
 
 // EXTERNAL MODULE: consume shared module (default) vue@^3.0.11 (strict) (fallback: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js)
 var runtime_dom_esm_bundler_js_ = __webpack_require__(748);
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=2a691264&scoped=true
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=1d801536&scoped=true
 
-const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-2a691264")
+const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-1d801536")
 
-;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-2a691264")
+;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-1d801536")
 const _hoisted_1 = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.createVNode)("label", null, "x: ", -1)
 const _hoisted_2 = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.createVNode)("label", null, "y: ", -1)
 ;(0,runtime_dom_esm_bundler_js_.popScopeId)()
@@ -138,7 +138,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
     ])
   ]))
 })
-;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=2a691264&scoped=true
+;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=1d801536&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=script&lang=js
 
@@ -186,7 +186,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
     },
   },
   created() {
-    this.previewImage = this.defaultConfig.watermark;
+    this.previewImage = "data:image/png;base64," + this.defaultConfig.watermark;
     (this.x = this.defaultConfig.x), (this.y = this.defaultConfig.y);
     this.updateConfig();
   },
@@ -194,9 +194,9 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
 
 ;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-2.use[0]!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=style&index=0&id=2a691264&scoped=true&lang=css
-var Widgetvue_type_style_index_0_id_2a691264_scoped_true_lang_css = __webpack_require__(78);
-;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=style&index=0&id=2a691264&scoped=true&lang=css
+// EXTERNAL MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-2.use[0]!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=style&index=0&id=1d801536&scoped=true&lang=css
+var Widgetvue_type_style_index_0_id_1d801536_scoped_true_lang_css = __webpack_require__(948);
+;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=style&index=0&id=1d801536&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/Widget.vue
 
@@ -205,7 +205,7 @@ var Widgetvue_type_style_index_0_id_2a691264_scoped_true_lang_css = __webpack_re
 
 ;
 Widgetvue_type_script_lang_js.render = render
-Widgetvue_type_script_lang_js.__scopeId = "data-v-2a691264"
+Widgetvue_type_script_lang_js.__scopeId = "data-v-1d801536"
 
 /* harmony default export */ const Widget = ((/* unused pure expression or super */ null && (script)));
 
@@ -298,7 +298,7 @@ const payment_pay = async (payAddress, ethPrice) => {
 
 
 // EXTERNAL MODULE: ./src/Widget.vue + 5 modules
-var src_Widget = __webpack_require__(741);
+var src_Widget = __webpack_require__(456);
 ;// CONCATENATED MODULE: ./src/index.js
 const pkg = __webpack_require__.e(/* import() */ 333).then(__webpack_require__.bind(__webpack_require__, 333));
 
@@ -713,7 +713,7 @@ const defaultConfig = async () => {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			179: 0,
-/******/ 			741: 0,
+/******/ 			456: 0,
 /******/ 			748: 0
 /******/ 		};
 /******/ 		
@@ -1017,7 +1017,7 @@ const defaultConfig = async () => {
 /******/ 					promises.push(installedWasmModuleData);
 /******/ 				else {
 /******/ 					var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 					var req = fetch(__webpack_require__.p + "" + {"333":{"641":"999323e88953b2352e22"}}[chunkId][wasmModuleId] + ".module.wasm");
+/******/ 					var req = fetch(__webpack_require__.p + "" + {"333":{"641":"1ce29697c38572e7d861"}}[chunkId][wasmModuleId] + ".module.wasm");
 /******/ 					var promise;
 /******/ 					if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 						promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
