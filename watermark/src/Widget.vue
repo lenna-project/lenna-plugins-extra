@@ -60,7 +60,7 @@ export default defineComponent({
     },
   },
   created() {
-    this.previewImage = this.defaultConfig.watermark;
+    this.previewImage = "data:image/png;base64," + this.defaultConfig.watermark;
     (this.x = this.defaultConfig.x), (this.y = this.defaultConfig.y);
     this.updateConfig();
   },
