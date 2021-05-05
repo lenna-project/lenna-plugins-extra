@@ -515,7 +515,7 @@ dependencies = [
 [[package]]
 name = "photon-rs"
 version = "0.3.1"
-source = "git+https://github.com/chriamue/photon.git?branch=feature/rayon#a0ee542fb755403c7f971a27d95035ea0ea22929"
+source = "git+https://github.com/silvia-odwyer/photon?branch=master#9238de9b3e795df08a3eb6e5b71c452206acf1bd"
 dependencies = [
  "base64",
  "image",
