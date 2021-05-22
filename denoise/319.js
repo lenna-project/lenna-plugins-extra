@@ -185,7 +185,7 @@ const process = async (config, image) => {
   return __webpack_require__.e(/* import() */ 381).then(__webpack_require__.bind(__webpack_require__, 381)).then((processor) => processor.process(config, image));
 };
 const defaultConfig = async () => {
-  return { threshold: 10, every: 1 };
+  return { threshold: 20, samples: 64 };
 };
 
 
