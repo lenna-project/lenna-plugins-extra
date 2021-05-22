@@ -4,7 +4,7 @@ use lenna_core::plugins::PluginRegistrar;
 use lenna_core::Processor;
 use lenna_core::ProcessorConfig;
 
-pub mod train;
+pub mod denoise;
 
 extern "C" fn register(registrar: &mut dyn PluginRegistrar) {
     registrar.add_plugin(Box::new(Denoise));
@@ -50,7 +50,7 @@ impl Processor for Denoise {
 
     fn process(&self, config: ProcessorConfig, image: DynamicImage) -> DynamicImage {
         let config: Config = serde_json::from_value(config.config).unwrap();
-        self.denoise(&image, config.every, config.threshold)
+        denoise::denoise(&image, config.every, config.threshold)
     }
 
     fn default_config(&self) -> serde_json::Value {
