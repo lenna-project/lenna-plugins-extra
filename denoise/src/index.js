@@ -17,5 +17,5 @@ export const process = async (config, image) => {
   return import("../pkg").then((processor) => processor.process(config, image));
 };
 export const defaultConfig = async () => {
-  return { threshold: 10, every: 1 };
+  return { threshold: 20, samples: 64 };
 };

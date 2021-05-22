@@ -18,15 +18,15 @@ pub struct Denoise;
 
 #[derive(Clone, serde::Serialize, serde::Deserialize)]
 struct Config {
-    every: usize,
+    samples: usize,
     threshold: u8,
 }
 
 impl Default for Config {
     fn default() -> Self {
         Config {
-            every: 8,
-            threshold: 10,
+            samples: 64,
+            threshold: 20,
         }
     }
 }
@@ -50,7 +50,7 @@ impl Processor for Denoise {
 
     fn process(&self, config: ProcessorConfig, image: DynamicImage) -> DynamicImage {
         let config: Config = serde_json::from_value(config.config).unwrap();
-        denoise::denoise(&image, config.every, config.threshold)
+        denoise::denoise(&image, config.samples, config.threshold)
     }
 
     fn default_config(&self) -> serde_json::Value {
@@ -82,8 +82,7 @@ mod tests {
             id: "denoise".into(),
             config: denoise.default_config(),
         };
-        let mut image = Reader::open("../lenna.png").unwrap().decode().unwrap();
-        let image = image.crop(0, 0, 256, 256);
+        let image = Reader::open("../lenna.png").unwrap().decode().unwrap();
         let (w, h) = image.dimensions();
         let img = denoise.process(config, image);
         let (w2, h2) = img.dimensions();

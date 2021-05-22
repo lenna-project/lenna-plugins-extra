@@ -63,25 +63,19 @@ pub fn target(image: &SubImage<&DynamicImage>) -> Vec<f64> {
 pub fn train_predict(
     view: &SubImage<&DynamicImage>,
     out: &mut SubImage<&mut RgbImage>,
-    every: usize,
+    samples: usize,
 ) {
     let features = features(view);
     let target = target(view);
-
     let mut table_builder = TableBuilder::new();
-    let mut count = 0;
     for (xs, y) in features.iter().zip(target.iter()) {
-        count += 1;
-        if count == every {
-            count = 0;
-            table_builder.add_row(xs, *y).unwrap();
-        }
+        table_builder.add_row(xs, *y).unwrap();
     }
     let table = table_builder.build().unwrap();
 
     let mut regressor = RandomForestRegressorOptions::new();
     //regressor.max_features(std::num::NonZeroUsize::new(256).unwrap());
-    //regressor.max_samples(std::num::NonZeroUsize::new(256 * 256).unwrap());
+    regressor.max_samples(std::num::NonZeroUsize::new(samples).unwrap());
     #[cfg(not(target_arch = "wasm32"))]
     let predictor = regressor.seed(42).parallel().fit(Mse, table);
     #[cfg(target_arch = "wasm32")]
@@ -101,7 +95,7 @@ pub fn train_predict(
     }
 }
 
-pub fn error_image(image: &DynamicImage, every: usize, threashold: u8) -> DynamicImage {
+pub fn error_image(image: &DynamicImage, samples: usize, threashold: u8) -> DynamicImage {
     let window_size = 256;
     let (width, height) = image.dimensions();
     let mut error_img = ImageBuffer::<Rgb<u8>, Vec<u8>>::new(width, height);
@@ -114,7 +108,7 @@ pub fn error_image(image: &DynamicImage, every: usize, threashold: u8) -> Dynami
 
             let sub_view = SubImage::new(image, x, y, w, h);
             let mut sub_img = error_img.sub_image(x, y, w, h);
-            train_predict(&sub_view, &mut sub_img, every);
+            train_predict(&sub_view, &mut sub_img, samples);
 
             x += window_size;
         }
@@ -142,8 +136,8 @@ pub fn error_image(image: &DynamicImage, every: usize, threashold: u8) -> Dynami
     DynamicImage::ImageRgb8(out)
 }
 
-pub fn denoise(image: &DynamicImage, every: usize, threashold: u8) -> DynamicImage {
-    let error_img = error_image(image, every, threashold);
+pub fn denoise(image: &DynamicImage, samples: usize, threashold: u8) -> DynamicImage {
+    let error_img = error_image(image, samples, threashold);
     let (width, height) = image.dimensions();
     let sub_view = SubImage::new(image, 0, 0, width, height);
     let mut out: ImageBuffer<Rgb<u8>, Vec<u8>> = image.to_rgb8();
