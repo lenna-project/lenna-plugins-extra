@@ -13,26 +13,34 @@ jobs:
           toolchain: stable
       - uses: jetli/wasm-pack-action@v0.3.0
         with:
-          version: 'latest'
-    
+          version: "latest"
+
       - run: wasm-pack build watermark
+      - run: wasm-pack build denoise
 
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: "14.x"
       - name: Install npm dependencies
         run: npm ci
         working-directory: watermark
+      - name: Install npm dependencies
+        run: npm ci
+        working-directory: denoise
 
       - name: Build watermark app
         run: NODE_ENV=production npm run build --if-present
         working-directory: watermark
+      - name: Build denoise app
+        run: NODE_ENV=production npm run build --if-present
+        working-directory: denoise
 
       - run: mkdir -p public/
 
       - run: mv ./watermark/dist ./public/watermark
-      
+      - run: mv ./denoise/dist ./public/denoise
+
       - run: cp plugins.json public/
       - run: ls public/
 
