@@ -18,12 +18,16 @@ pub struct Denoise;
 
 #[derive(Clone, serde::Serialize, serde::Deserialize)]
 struct Config {
-    threshold: f32,
+    every: usize,
+    threshold: u8,
 }
 
 impl Default for Config {
     fn default() -> Self {
-        Config { threshold: 0.5 }
+        Config {
+            every: 8,
+            threshold: 10,
+        }
     }
 }
 
@@ -46,7 +50,7 @@ impl Processor for Denoise {
 
     fn process(&self, config: ProcessorConfig, image: DynamicImage) -> DynamicImage {
         let config: Config = serde_json::from_value(config.config).unwrap();
-        self.denoise(&image)
+        self.denoise(&image, config.every, config.threshold)
     }
 
     fn default_config(&self) -> serde_json::Value {
@@ -63,7 +67,7 @@ lenna_core::export_wasm_plugin!(Denoise);
 mod tests {
     use super::*;
     use image::io::Reader;
-    use image::{GenericImageView};
+    use image::GenericImageView;
 
     #[test]
     fn default() {
@@ -78,14 +82,14 @@ mod tests {
             id: "denoise".into(),
             config: denoise.default_config(),
         };
-        let image = Reader::open("../lenna.png").unwrap().decode().unwrap();
-        let image = image.thumbnail(256, 256);
+        let mut image = Reader::open("../lenna.png").unwrap().decode().unwrap();
+        let image = image.crop(0, 0, 256, 256);
         let (w, h) = image.dimensions();
         let img = denoise.process(config, image);
         let (w2, h2) = img.dimensions();
         assert_eq!(w, w2);
         assert_eq!(h, h2);
         assert_eq!(denoise.name(), "denoise");
-        img.save("test.jpg").unwrap();
+        img.save("denoised.jpg").unwrap();
     }
 }

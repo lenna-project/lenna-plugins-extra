@@ -1,28 +1,9 @@
+use crate::Denoise;
 use image::{DynamicImage, GenericImage, GenericImageView, ImageBuffer, Rgb, RgbImage, SubImage};
 use randomforest::criterion::Mse;
 use randomforest::table::TableBuilder;
 use randomforest::RandomForestRegressorOptions;
-use std::iter::Sum;
-use crate::Denoise;
-
-fn mean<'a, T, I>(iter: I) -> Option<f64>
-where
-    T: Into<f64> + Sum<&'a T> + 'a,
-    I: Iterator<Item = &'a T>,
-{
-    let mut len = 0;
-    let sum = iter
-        .map(|t| {
-            len += 1;
-            t
-        })
-        .sum::<T>();
-
-    match len {
-        0 => None,
-        _ => Some(sum.into() / len as f64),
-    }
-}
+use statistical::mean;
 
 fn diff(a: &u8, b: &u8) -> u8 {
     match a > b {
@@ -81,13 +62,24 @@ impl Denoise {
         target
     }
 
-    pub fn train_predict(&self, view: &SubImage<&DynamicImage>, out: &mut SubImage<&mut RgbImage>) {
+    pub fn train_predict(
+        &self,
+        view: &SubImage<&DynamicImage>,
+        out: &mut SubImage<&mut RgbImage>,
+        every: usize,
+    ) {
+        let now = std::time::Instant::now();
         let features = self.features(view);
         let target = self.target(view);
 
         let mut table_builder = TableBuilder::new();
+        let mut count = 0;
         for (xs, y) in features.iter().zip(target.iter()) {
-            table_builder.add_row(xs, *y).unwrap();
+            count += 1;
+            if count == every {
+                count = 0;
+                table_builder.add_row(xs, *y).unwrap();
+            }
         }
         let table = table_builder.build().unwrap();
 
@@ -98,6 +90,7 @@ impl Denoise {
         let predictor = regressor.seed(42).parallel().fit(Mse, table);
         #[cfg(target_arch = "wasm32")]
         let predictor = regressor.seed(42).fit(Mse, table);
+        println!("learned {}", now.elapsed().as_secs());
 
         for pix in view.pixels() {
             let (x, y) = (pix.0, pix.1);
@@ -106,18 +99,16 @@ impl Denoise {
             let r = predictor.predict(&neighbours(x, y, view, 0)) as u8;
             let g = predictor.predict(&neighbours(x, y, view, 1)) as u8;
             let b = predictor.predict(&neighbours(x, y, view, 2)) as u8;
-            let p = diff(&red, &r) + diff(&green, &g) + diff(&blue, &b);
-            out.put_pixel(
-                x,
-                y,
-                Rgb([r, g, b]),
-            );
+            let p0 = diff(&red, &r);
+            let p1 = diff(&green, &g);
+            let p2 = diff(&blue, &b);
+            out.put_pixel(x, y, Rgb([p0, p1, p2]));
         }
+        println!("predicted {}", now.elapsed().as_secs());
     }
 
-    pub fn denoise(&self, image: &DynamicImage) -> DynamicImage {
-        let window_size = 16;
-        let threashold = 10;
+    pub fn error_image(&self, image: &DynamicImage, every: usize, threashold: u8) -> DynamicImage {
+        let window_size = 256;
         let (width, height) = image.dimensions();
         let mut error_img = ImageBuffer::<Rgb<u8>, Vec<u8>>::new(width, height);
         let mut y = 0;
@@ -129,38 +120,79 @@ impl Denoise {
 
                 let sub_view = SubImage::new(image, x, y, w, h);
                 let mut sub_img = error_img.sub_image(x, y, w, h);
-                self.train_predict(&sub_view, &mut sub_img);
+                self.train_predict(&sub_view, &mut sub_img, every);
 
                 x += window_size;
             }
             y += window_size;
         }
-        let sub_view = SubImage::new(image, 0, 0, width, height);
-        let mut out: ImageBuffer::<Rgb<u8>, Vec<u8>> = image.to_rgb8();
+        let mut out: ImageBuffer<Rgb<u8>, Vec<u8>> = image.to_rgb8();
         for pix in DynamicImage::ImageRgb8(error_img).pixels() {
             let (x, y) = (pix.0, pix.1);
             let rgba: image::Rgba<u8> = pix.2;
             let (c0, c1, c2) = (rgba[0], rgba[1], rgba[2]);
             let r = match c0 > threashold {
-                true => mean(neighbours(x, y, &sub_view, 0).iter()).unwrap() as u8,
-                _ => out.get_pixel(x,y)[0]
+                true => 255,
+                _ => 0,
             };
             let g = match c1 > threashold {
-                true => mean(neighbours(x, y, &sub_view, 1).iter()).unwrap() as u8,
-                _ => out.get_pixel(x,y)[1]
+                true => 255,
+                _ => 0,
             };
             let b = match c2 > threashold {
-                true => mean(neighbours(x, y, &sub_view, 2).iter()).unwrap() as u8,
-                _ => out.get_pixel(x,y)[2]
+                true => 255,
+                _ => 0,
             };
-            out.put_pixel(
-                x,
-                y,
-                Rgb(
-                    [r, g, b]
-                ),
-            );
+            out.put_pixel(x, y, Rgb([r, g, b]));
         }
         DynamicImage::ImageRgb8(out)
+    }
+
+    pub fn denoise(&self, image: &DynamicImage, every: usize, threashold: u8) -> DynamicImage {
+        let error_img = self.error_image(image, every, threashold);
+        let (width, height) = image.dimensions();
+        let sub_view = SubImage::new(image, 0, 0, width, height);
+        let mut out: ImageBuffer<Rgb<u8>, Vec<u8>> = image.to_rgb8();
+        for pix in error_img.pixels() {
+            let (x, y) = (pix.0, pix.1);
+            let rgba: image::Rgba<u8> = pix.2;
+            let (c0, c1, c2) = (rgba[0], rgba[1], rgba[2]);
+
+            let r = match c0 > threashold {
+                true => mean(&neighbours(x, y, &sub_view, 0)) as u8,
+                _ => out.get_pixel(x, y)[0],
+            };
+            let g = match c1 > threashold {
+                true => mean(&neighbours(x, y, &sub_view, 1)) as u8,
+                _ => out.get_pixel(x, y)[1],
+            };
+            let b = match c2 > threashold {
+                true => mean(&neighbours(x, y, &sub_view, 2)) as u8,
+                _ => out.get_pixel(x, y)[2],
+            };
+            out.put_pixel(x, y, Rgb([r, g, b]));
+        }
+        DynamicImage::ImageRgb8(out)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::*;
+    use image::io::Reader;
+    use image::GenericImageView;
+
+    #[test]
+    fn error_image() {
+        let denoise = Denoise::default();
+        let mut image = Reader::open("../lenna.png").unwrap().decode().unwrap();
+        let image = image.crop(0, 0, 256, 256);
+        let (w, h) = image.dimensions();
+        let img = denoise.error_image(&image, 4, 10);
+        let (w2, h2) = img.dimensions();
+        assert_eq!(w, w2);
+        assert_eq!(h, h2);
+        assert_eq!(denoise.name(), "denoise");
+        img.save("error.jpg").unwrap();
     }
 }
