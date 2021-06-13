@@ -2,7 +2,7 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 125:
+/***/ 430:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 
@@ -10,11 +10,11 @@
 
 // EXTERNAL MODULE: consume shared module (default) vue@^3.0.11 (strict) (fallback: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js)
 var runtime_dom_esm_bundler_js_ = __webpack_require__(748);
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=5036045a&scoped=true
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=0849d5f0&scoped=true
 
-const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-5036045a")
+const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-0849d5f0")
 
-;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-5036045a")
+;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-0849d5f0")
 const _hoisted_1 = { class: "plugin-config" }
 const _hoisted_2 = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.createVNode)("br", null, null, -1)
 ;(0,runtime_dom_esm_bundler_js_.popScopeId)()
@@ -23,20 +23,21 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
   return ((0,runtime_dom_esm_bundler_js_.openBlock)(), (0,runtime_dom_esm_bundler_js_.createBlock)("div", _hoisted_1, [
     (0,runtime_dom_esm_bundler_js_.withDirectives)((0,runtime_dom_esm_bundler_js_.createVNode)("input", {
       "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => (_ctx.text = $event)),
-      placeholder: "text"
-    }, null, 512), [
+      placeholder: "text",
+      onChange: _cache[2] || (_cache[2] = $event => (_ctx.updateConfig()))
+    }, null, 544), [
       [runtime_dom_esm_bundler_js_.vModelText, _ctx.text]
     ]),
     _hoisted_2
   ]))
 })
-;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=5036045a&scoped=true
+;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=0849d5f0&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=script&lang=js
 
 
 /* harmony default export */ const Widgetvue_type_script_lang_js = ((0,runtime_dom_esm_bundler_js_.defineComponent)({
-  name: "ExifWidget",
+  name: "TextWidget",
   props: {
     defaultConfig: Object,
   },
@@ -67,7 +68,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
 
 ;
 Widgetvue_type_script_lang_js.render = render
-Widgetvue_type_script_lang_js.__scopeId = "data-v-5036045a"
+Widgetvue_type_script_lang_js.__scopeId = "data-v-0849d5f0"
 
 /* harmony default export */ const Widget = ((/* unused pure expression or super */ null && (script)));
 
@@ -82,7 +83,7 @@ Widgetvue_type_script_lang_js.__scopeId = "data-v-5036045a"
 ;// CONCATENATED MODULE: ./assets/text.png
 /* harmony default export */ const assets_text = (__webpack_require__.p + "ce33068a9c9195960b4cf16d2d98319b.png");
 // EXTERNAL MODULE: ./src/Widget.vue + 4 modules
-var src_Widget = __webpack_require__(125);
+var src_Widget = __webpack_require__(430);
 ;// CONCATENATED MODULE: ./src/index.js
 const pkg = __webpack_require__.e(/* import() */ 678).then(__webpack_require__.bind(__webpack_require__, 678));
 
@@ -502,7 +503,7 @@ const icon = () => {
 /******/ 		var installedChunks = {
 /******/ 			179: 0,
 /******/ 			730: 0,
-/******/ 			125: 0,
+/******/ 			430: 0,
 /******/ 			748: 0
 /******/ 		};
 /******/ 		
@@ -651,7 +652,7 @@ const icon = () => {
 /******/ 					promises.push(installedWasmModuleData);
 /******/ 				else {
 /******/ 					var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 					var req = fetch(__webpack_require__.p + "" + {"678":{"348":"8191df37ac42efdeadac"}}[chunkId][wasmModuleId] + ".module.wasm");
+/******/ 					var req = fetch(__webpack_require__.p + "" + {"678":{"348":"28d2ab5562419d1fab9c"}}[chunkId][wasmModuleId] + ".module.wasm");
 /******/ 					var promise;
 /******/ 					if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 						promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
