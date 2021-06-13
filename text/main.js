@@ -1,203 +1,65 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 3:
-/***/ ((module) => {
-
-"use strict";
-
-/**
- * Returns a Promise that resolves to the value of window.ethereum if it is
- * set within the given timeout, or null.
- * The Promise will not reject, but an error will be thrown if invalid options
- * are provided.
- *
- * @param options - Options bag.
- * @param options.mustBeMetaMask - Whether to only look for MetaMask providers.
- * Default: false
- * @param options.silent - Whether to silence console errors. Does not affect
- * thrown errors. Default: false
- * @param options.timeout - Milliseconds to wait for 'ethereum#initialized' to
- * be dispatched. Default: 3000
- * @returns A Promise that resolves with the Provider if it is detected within
- * given timeout, otherwise null.
- */
-function detectEthereumProvider({ mustBeMetaMask = false, silent = false, timeout = 3000, } = {}) {
-    _validateInputs();
-    let handled = false;
-    return new Promise((resolve) => {
-        if (window.ethereum) {
-            handleEthereum();
-        }
-        else {
-            window.addEventListener('ethereum#initialized', handleEthereum, { once: true });
-            setTimeout(() => {
-                handleEthereum();
-            }, timeout);
-        }
-        function handleEthereum() {
-            if (handled) {
-                return;
-            }
-            handled = true;
-            window.removeEventListener('ethereum#initialized', handleEthereum);
-            const { ethereum } = window;
-            if (ethereum && (!mustBeMetaMask || ethereum.isMetaMask)) {
-                resolve(ethereum);
-            }
-            else {
-                const message = mustBeMetaMask && ethereum
-                    ? 'Non-MetaMask window.ethereum detected.'
-                    : 'Unable to detect window.ethereum.';
-                !silent && console.error('@metamask/detect-provider:', message);
-                resolve(null);
-            }
-        }
-    });
-    function _validateInputs() {
-        if (typeof mustBeMetaMask !== 'boolean') {
-            throw new Error(`@metamask/detect-provider: Expected option 'mustBeMetaMask' to be a boolean.`);
-        }
-        if (typeof silent !== 'boolean') {
-            throw new Error(`@metamask/detect-provider: Expected option 'silent' to be a boolean.`);
-        }
-        if (typeof timeout !== 'number') {
-            throw new Error(`@metamask/detect-provider: Expected option 'timeout' to be a number.`);
-        }
-    }
-}
-module.exports = detectEthereumProvider;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQVlBOzs7Ozs7Ozs7Ozs7Ozs7R0FlRztBQUNILFNBQVMsc0JBQXNCLENBQUMsRUFDOUIsY0FBYyxHQUFHLEtBQUssRUFDdEIsTUFBTSxHQUFHLEtBQUssRUFDZCxPQUFPLEdBQUcsSUFBSSxHQUNmLEdBQUcsRUFBRTtJQUVKLGVBQWUsRUFBRSxDQUFDO0lBRWxCLElBQUksT0FBTyxHQUFHLEtBQUssQ0FBQztJQUVwQixPQUFPLElBQUksT0FBTyxDQUFDLENBQUMsT0FBTyxFQUFFLEVBQUU7UUFDN0IsSUFBSSxNQUFNLENBQUMsUUFBUSxFQUFFO1lBRW5CLGNBQWMsRUFBRSxDQUFDO1NBRWxCO2FBQU07WUFFTCxNQUFNLENBQUMsZ0JBQWdCLENBQ3JCLHNCQUFzQixFQUN0QixjQUFjLEVBQ2QsRUFBRSxJQUFJLEVBQUUsSUFBSSxFQUFFLENBQ2YsQ0FBQztZQUVGLFVBQVUsQ0FBQyxHQUFHLEVBQUU7Z0JBQ2QsY0FBYyxFQUFFLENBQUM7WUFDbkIsQ0FBQyxFQUFFLE9BQU8sQ0FBQyxDQUFDO1NBQ2I7UUFFRCxTQUFTLGNBQWM7WUFFckIsSUFBSSxPQUFPLEVBQUU7Z0JBQ1gsT0FBTzthQUNSO1lBQ0QsT0FBTyxHQUFHLElBQUksQ0FBQztZQUVmLE1BQU0sQ0FBQyxtQkFBbUIsQ0FBQyxzQkFBc0IsRUFBRSxjQUFjLENBQUMsQ0FBQztZQUVuRSxNQUFNLEVBQUUsUUFBUSxFQUFFLEdBQUcsTUFBTSxDQUFDO1lBRTVCLElBQUksUUFBUSxJQUFJLENBQUMsQ0FBQyxjQUFjLElBQUksUUFBUSxDQUFDLFVBQVUsQ0FBQyxFQUFFO2dCQUN4RCxPQUFPLENBQUMsUUFBUSxDQUFDLENBQUM7YUFDbkI7aUJBQU07Z0JBRUwsTUFBTSxPQUFPLEdBQUcsY0FBYyxJQUFJLFFBQVE7b0JBQ3hDLENBQUMsQ0FBQyx3Q0FBd0M7b0JBQzFDLENBQUMsQ0FBQyxtQ0FBbUMsQ0FBQztnQkFFeEMsQ0FBQyxNQUFNLElBQUksT0FBTyxDQUFDLEtBQUssQ0FBQyw0QkFBNEIsRUFBRSxPQUFPLENBQUMsQ0FBQztnQkFDaEUsT0FBTyxDQUFDLElBQUksQ0FBQyxDQUFDO2FBQ2Y7UUFDSCxDQUFDO0lBQ0gsQ0FBQyxDQUFDLENBQUM7SUFFSCxTQUFTLGVBQWU7UUFDdEIsSUFBSSxPQUFPLGNBQWMsS0FBSyxTQUFTLEVBQUU7WUFDdkMsTUFBTSxJQUFJLEtBQUssQ0FBQyw4RUFBOEUsQ0FBQyxDQUFDO1NBQ2pHO1FBQ0QsSUFBSSxPQUFPLE1BQU0sS0FBSyxTQUFTLEVBQUU7WUFDL0IsTUFBTSxJQUFJLEtBQUssQ0FBQyxzRUFBc0UsQ0FBQyxDQUFDO1NBQ3pGO1FBQ0QsSUFBSSxPQUFPLE9BQU8sS0FBSyxRQUFRLEVBQUU7WUFDL0IsTUFBTSxJQUFJLEtBQUssQ0FBQyxzRUFBc0UsQ0FBQyxDQUFDO1NBQ3pGO0lBQ0gsQ0FBQztBQUNILENBQUM7QUFsRkQsaUJBQVMsc0JBQXNCLENBQUMifQ==
-
-/***/ }),
-
-/***/ 948:
-/***/ (() => {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 456:
+/***/ 125:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-"use strict";
 
 // UNUSED EXPORTS: default
 
 // EXTERNAL MODULE: consume shared module (default) vue@^3.0.11 (strict) (fallback: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js)
 var runtime_dom_esm_bundler_js_ = __webpack_require__(748);
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=1d801536&scoped=true
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=5036045a&scoped=true
 
-const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-1d801536")
+const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-5036045a")
 
-;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-1d801536")
-const _hoisted_1 = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.createVNode)("label", null, "x: ", -1)
-const _hoisted_2 = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.createVNode)("label", null, "y: ", -1)
+;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-5036045a")
+const _hoisted_1 = { class: "plugin-config" }
+const _hoisted_2 = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.createVNode)("br", null, null, -1)
 ;(0,runtime_dom_esm_bundler_js_.popScopeId)()
 
 const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
-  return ((0,runtime_dom_esm_bundler_js_.openBlock)(), (0,runtime_dom_esm_bundler_js_.createBlock)("div", null, [
-    (0,runtime_dom_esm_bundler_js_.createVNode)("div", {
-      class: "imagePreviewWrapper",
-      style: { 'background-image': `url(${_ctx.previewImage})` },
-      onClick: _cache[1] || (_cache[1] = (...args) => (_ctx.selectImage && _ctx.selectImage(...args)))
-    }, null, 4),
-    (0,runtime_dom_esm_bundler_js_.createVNode)("input", {
-      ref: "fileInput",
-      type: "file",
-      onInput: _cache[2] || (_cache[2] = (...args) => (_ctx.pickFile && _ctx.pickFile(...args)))
-    }, null, 544),
-    (0,runtime_dom_esm_bundler_js_.createVNode)("div", null, [
-      _hoisted_1,
-      (0,runtime_dom_esm_bundler_js_.withDirectives)((0,runtime_dom_esm_bundler_js_.createVNode)("input", {
-        type: "number",
-        "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => (_ctx.x = $event)),
-        onChange: _cache[4] || (_cache[4] = $event => (_ctx.updateConfig()))
-      }, null, 544), [
-        [
-          runtime_dom_esm_bundler_js_.vModelText,
-          _ctx.x,
-          void 0,
-          { number: true }
-        ]
-      ]),
-      _hoisted_2,
-      (0,runtime_dom_esm_bundler_js_.withDirectives)((0,runtime_dom_esm_bundler_js_.createVNode)("input", {
-        type: "number",
-        "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => (_ctx.y = $event)),
-        onChange: _cache[6] || (_cache[6] = $event => (_ctx.updateConfig()))
-      }, null, 544), [
-        [
-          runtime_dom_esm_bundler_js_.vModelText,
-          _ctx.y,
-          void 0,
-          { number: true }
-        ]
-      ])
-    ])
+  return ((0,runtime_dom_esm_bundler_js_.openBlock)(), (0,runtime_dom_esm_bundler_js_.createBlock)("div", _hoisted_1, [
+    (0,runtime_dom_esm_bundler_js_.withDirectives)((0,runtime_dom_esm_bundler_js_.createVNode)("input", {
+      "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => (_ctx.text = $event)),
+      placeholder: "text"
+    }, null, 512), [
+      [runtime_dom_esm_bundler_js_.vModelText, _ctx.text]
+    ]),
+    _hoisted_2
   ]))
 })
-;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=1d801536&scoped=true
+;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=5036045a&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=script&lang=js
 
 
 /* harmony default export */ const Widgetvue_type_script_lang_js = ((0,runtime_dom_esm_bundler_js_.defineComponent)({
-  name: "WatermarkWidget",
+  name: "ExifWidget",
   props: {
     defaultConfig: Object,
   },
   data() {
     return {
-      previewImage: null,
-      x: 0,
-      y: 0,
+      text: "",
     };
   },
   methods: {
-    selectImage() {
-      this.$refs.fileInput.click();
-    },
-    pickFile() {
-      let input = this.$refs.fileInput;
-      let file = input.files;
-      if (file && file[0]) {
-        let reader = new FileReader();
-        reader.onload = (e) => {
-          this.previewImage = e.target.result;
-          this.updateConfig();
-        };
-        reader.readAsDataURL(file[0]);
-        this.$emit("input", file[0]);
-      }
-    },
     async updateConfig() {
-      if (!this.previewImage) return;
-      let watermark = this.previewImage
-        .replace("data:image/jpeg;base64,", "")
-        .replace("data:image/png;base64,", "");
       let config = {
-        watermark: watermark,
-        x: this.x,
-        y: this.y,
+        text: this.text,
       };
       this.$emit("changeConfig", config);
     },
   },
   created() {
-    this.previewImage = "data:image/png;base64," + this.defaultConfig.watermark;
-    (this.x = this.defaultConfig.x), (this.y = this.defaultConfig.y);
     this.updateConfig();
   },
 }));
 
 ;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-2.use[0]!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=style&index=0&id=1d801536&scoped=true&lang=css
-var Widgetvue_type_style_index_0_id_1d801536_scoped_true_lang_css = __webpack_require__(948);
-;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=style&index=0&id=1d801536&scoped=true&lang=css
-
 ;// CONCATENATED MODULE: ./src/Widget.vue
 
 
@@ -205,123 +67,40 @@ var Widgetvue_type_style_index_0_id_1d801536_scoped_true_lang_css = __webpack_re
 
 ;
 Widgetvue_type_script_lang_js.render = render
-Widgetvue_type_script_lang_js.__scopeId = "data-v-1d801536"
+Widgetvue_type_script_lang_js.__scopeId = "data-v-5036045a"
 
 /* harmony default export */ const Widget = ((/* unused pure expression or super */ null && (script)));
 
 /***/ }),
 
-/***/ 319:
+/***/ 730:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-"use strict";
 
-// UNUSED EXPORTS: defaultConfig, description, name, process, processor, ui
+// UNUSED EXPORTS: defaultConfig, description, icon, name, process, processor, ui
 
-// EXTERNAL MODULE: ./node_modules/@metamask/detect-provider/dist/index.js
-var dist = __webpack_require__(3);
-;// CONCATENATED MODULE: ./src/payment.js
-
-
-
-const apiKey = "YourApiKeyToken";
-
-const accountSent = async (address, payAddress, ethPrice) => {
-  return await fetch(
-    `https://api-kovan.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=asc&apikey=${apiKey}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      let res = data.result.map(
-        (tx) =>
-          tx.to === payAddress.toLowerCase() &&
-          BigNumber.from(tx.value) >= utils.parseEther(ethPrice.toString())
-      );
-      return res;
-    })
-    .then((txs) => txs.includes(true))
-    .catch((e) => {
-      console.log(e);
-      return false;
-    });
-};
-
-const payment_isPayed = async (payAddress, ethPrice) => {
-  const provider = await detectEthereumProvider();
-  if (provider) {
-    const ethereum = window.ethereum;
-
-    let payed = await ethereum
-      .request({ method: "eth_requestAccounts" })
-      .then((accounts) => {
-        return Promise.all(
-          accounts.map((address) => accountSent(address, payAddress, ethPrice))
-        );
-      })
-      .catch((err) => {
-        if (err.code === 4001) {
-          console.log("Please connect to MetaMask.");
-        } else {
-          console.error(err);
-        }
-      });
-    return payed.includes(true);
-  } else {
-    console.log("Please install MetaMask!");
-    return false;
-  }
-};
-
-const payment_pay = async (payAddress, ethPrice) => {
-  const provider = await detectEthereumProvider();
-  if (provider) {
-    const ethereum = window.ethereum;
-    const transactionParameters = {
-      to: payAddress,
-      from: ethereum.selectedAddress,
-      value: utils.parseEther(ethPrice.toString()).toHexString(),
-    };
-
-    return await ethereum
-      .request({
-        method: "eth_sendTransaction",
-        params: [transactionParameters],
-      })
-      .then(() => true)
-      .catch((_error) => false);
-  } else {
-    console.log("Please install MetaMask!");
-    return false;
-  }
-};
-
-
-
-// EXTERNAL MODULE: ./src/Widget.vue + 5 modules
-var src_Widget = __webpack_require__(456);
+;// CONCATENATED MODULE: ./assets/text.png
+/* harmony default export */ const assets_text = (__webpack_require__.p + "ce33068a9c9195960b4cf16d2d98319b.png");
+// EXTERNAL MODULE: ./src/Widget.vue + 4 modules
+var src_Widget = __webpack_require__(125);
 ;// CONCATENATED MODULE: ./src/index.js
-const pkg = __webpack_require__.e(/* import() */ 333).then(__webpack_require__.bind(__webpack_require__, 333));
+const pkg = __webpack_require__.e(/* import() */ 678).then(__webpack_require__.bind(__webpack_require__, 678));
 
-
-const payAddress = "0xb81C8Fb3e8811C239406F39bdDDF056Ea4B8fF37";
-const ethPrice = 0.002;
 
 
 const ui = (/* unused pure expression or super */ null && (Widget));
 const processor = (/* unused pure expression or super */ null && (pkg));
-const src_name = () => "watermark";
-const description = () => "Plugin to add watermark to image.";
+const src_name = () => "text";
+const description = () => "Writes text on images.";
 const process = async (config, image) => {
-  if (!(await isPayed(payAddress, ethPrice))) {
-    if (!(await pay(payAddress, ethPrice))) {
-      return image;
-    }
-  }
-  return __webpack_require__.e(/* import() */ 333).then(__webpack_require__.bind(__webpack_require__, 333)).then((processor) => processor.process(config, image));
+  return __webpack_require__.e(/* import() */ 678).then(__webpack_require__.bind(__webpack_require__, 678)).then(processor => processor.process(config, image));
 };
 const defaultConfig = async () => {
-  return { watermark: "", x: 0, y: 0 };
+  return { clear: false };
 };
+const icon = () => {
+  return textIcon;
+}
 
 
 /***/ })
@@ -396,6 +175,15 @@ const defaultConfig = async () => {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference all chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -431,7 +219,7 @@ const defaultConfig = async () => {
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "@lenna-project/watermark:";
+/******/ 		var dataWebpackPrefix = "@lenna-project/text:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -504,7 +292,7 @@ const defaultConfig = async () => {
 /******/ 			// runs all init snippets from all modules reachable
 /******/ 			var scope = __webpack_require__.S[name];
 /******/ 			var warn = (msg) => (typeof console !== "undefined" && console.warn && console.warn(msg));
-/******/ 			var uniqueName = "@lenna-project/watermark";
+/******/ 			var uniqueName = "@lenna-project/text";
 /******/ 			var register = (name, version, factory, eager) => {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -535,7 +323,7 @@ const defaultConfig = async () => {
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "https://lenna.app/lenna-plugins-extra/watermark/";
+/******/ 		__webpack_require__.p = "https://lenna.app/lenna-plugins/text/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/consumes */
@@ -713,7 +501,8 @@ const defaultConfig = async () => {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			179: 0,
-/******/ 			456: 0,
+/******/ 			730: 0,
+/******/ 			125: 0,
 /******/ 			748: 0
 /******/ 		};
 /******/ 		
@@ -789,7 +578,7 @@ const defaultConfig = async () => {
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunk_lenna_project_watermark"] = self["webpackChunk_lenna_project_watermark"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunk_lenna_project_text"] = self["webpackChunk_lenna_project_text"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
@@ -807,188 +596,33 @@ const defaultConfig = async () => {
 /******/ 		var wasmImportedFuncCache3;
 /******/ 		var wasmImportedFuncCache4;
 /******/ 		var wasmImportedFuncCache5;
-/******/ 		var wasmImportedFuncCache6;
-/******/ 		var wasmImportedFuncCache7;
-/******/ 		var wasmImportedFuncCache8;
-/******/ 		var wasmImportedFuncCache9;
-/******/ 		var wasmImportedFuncCache10;
-/******/ 		var wasmImportedFuncCache11;
-/******/ 		var wasmImportedFuncCache12;
-/******/ 		var wasmImportedFuncCache13;
-/******/ 		var wasmImportedFuncCache14;
-/******/ 		var wasmImportedFuncCache15;
-/******/ 		var wasmImportedFuncCache16;
-/******/ 		var wasmImportedFuncCache17;
-/******/ 		var wasmImportedFuncCache18;
-/******/ 		var wasmImportedFuncCache19;
-/******/ 		var wasmImportedFuncCache20;
-/******/ 		var wasmImportedFuncCache21;
-/******/ 		var wasmImportedFuncCache22;
-/******/ 		var wasmImportedFuncCache23;
-/******/ 		var wasmImportedFuncCache24;
-/******/ 		var wasmImportedFuncCache25;
-/******/ 		var wasmImportedFuncCache26;
-/******/ 		var wasmImportedFuncCache27;
-/******/ 		var wasmImportedFuncCache28;
-/******/ 		var wasmImportedFuncCache29;
-/******/ 		var wasmImportedFuncCache30;
-/******/ 		var wasmImportedFuncCache31;
-/******/ 		var wasmImportedFuncCache32;
-/******/ 		var wasmImportedFuncCache33;
-/******/ 		var wasmImportedFuncCache34;
-/******/ 		var wasmImportedFuncCache35;
-/******/ 		var wasmImportedFuncCache36;
 /******/ 		var wasmImportObjects = {
-/******/ 			641: function() {
+/******/ 			348: function() {
 /******/ 				return {
-/******/ 					"./watermark_bg.js": {
+/******/ 					"./text_bg.js": {
+/******/ 						"__wbindgen_json_parse": function(p0i32,p1i32) {
+/******/ 							if(wasmImportedFuncCache0 === undefined) wasmImportedFuncCache0 = __webpack_require__.c[970].exports;
+/******/ 							return wasmImportedFuncCache0["t$"](p0i32,p1i32);
+/******/ 						},
 /******/ 						"__wbindgen_json_serialize": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache0 === undefined) wasmImportedFuncCache0 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache0["r1"](p0i32,p1i32);
+/******/ 							if(wasmImportedFuncCache1 === undefined) wasmImportedFuncCache1 = __webpack_require__.c[970].exports;
+/******/ 							return wasmImportedFuncCache1["r1"](p0i32,p1i32);
 /******/ 						},
 /******/ 						"__wbindgen_object_drop_ref": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache1 === undefined) wasmImportedFuncCache1 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache1["ug"](p0i32);
-/******/ 						},
-/******/ 						"__wbindgen_json_parse": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache2 === undefined) wasmImportedFuncCache2 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache2["t$"](p0i32,p1i32);
+/******/ 							if(wasmImportedFuncCache2 === undefined) wasmImportedFuncCache2 = __webpack_require__.c[970].exports;
+/******/ 							return wasmImportedFuncCache2["ug"](p0i32);
 /******/ 						},
 /******/ 						"__wbg_new_59cb74e423758ede": function() {
-/******/ 							if(wasmImportedFuncCache3 === undefined) wasmImportedFuncCache3 = __webpack_require__.c[718].exports;
+/******/ 							if(wasmImportedFuncCache3 === undefined) wasmImportedFuncCache3 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache3["h9"]();
 /******/ 						},
 /******/ 						"__wbg_stack_558ba5917b466edd": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache4 === undefined) wasmImportedFuncCache4 = __webpack_require__.c[718].exports;
+/******/ 							if(wasmImportedFuncCache4 === undefined) wasmImportedFuncCache4 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache4["Dz"](p0i32,p1i32);
 /******/ 						},
 /******/ 						"__wbg_error_4bb6c2a97407129a": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache5 === undefined) wasmImportedFuncCache5 = __webpack_require__.c[718].exports;
+/******/ 							if(wasmImportedFuncCache5 === undefined) wasmImportedFuncCache5 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache5["kF"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbg_instanceof_Window_11e25482011fc506": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache6 === undefined) wasmImportedFuncCache6 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache6["s8"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_document_5aff8cd83ef968f5": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache7 === undefined) wasmImportedFuncCache7 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache7["WB"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_body_525168d9e773c3f8": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache8 === undefined) wasmImportedFuncCache8 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache8["Vk"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_createElement_ac65a6ce60c4812c": function(p0i32,p1i32,p2i32) {
-/******/ 							if(wasmImportedFuncCache9 === undefined) wasmImportedFuncCache9 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache9["b6"](p0i32,p1i32,p2i32);
-/******/ 						},
-/******/ 						"__wbg_width_5c37496c7c69eaa2": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache10 === undefined) wasmImportedFuncCache10 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache10["zC"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_height_3711225374206b37": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache11 === undefined) wasmImportedFuncCache11 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache11["Az"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_data_315524ada7b563f4": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache12 === undefined) wasmImportedFuncCache12 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache12["lj"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbg_newwithu8clampedarrayandsh_d5177e9b24f89848": function(p0i32,p1i32,p2i32,p3i32) {
-/******/ 							if(wasmImportedFuncCache13 === undefined) wasmImportedFuncCache13 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache13["QD"](p0i32,p1i32,p2i32,p3i32);
-/******/ 						},
-/******/ 						"__wbg_instanceof_CanvasRenderingContext2d_779e79c4121aa91b": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache14 === undefined) wasmImportedFuncCache14 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache14["l_"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_drawImage_8335c6778b19d155": function(p0i32,p1i32,p2f64,p3f64,p4f64,p5f64,p6f64,p7f64,p8f64,p9f64) {
-/******/ 							if(wasmImportedFuncCache15 === undefined) wasmImportedFuncCache15 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache15["ax"](p0i32,p1i32,p2f64,p3f64,p4f64,p5f64,p6f64,p7f64,p8f64,p9f64);
-/******/ 						},
-/******/ 						"__wbg_getImageData_b5842f1d6ce40388": function(p0i32,p1f64,p2f64,p3f64,p4f64) {
-/******/ 							if(wasmImportedFuncCache16 === undefined) wasmImportedFuncCache16 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache16["AV"](p0i32,p1f64,p2f64,p3f64,p4f64);
-/******/ 						},
-/******/ 						"__wbg_putImageData_67091e6c02209309": function(p0i32,p1i32,p2f64,p3f64) {
-/******/ 							if(wasmImportedFuncCache17 === undefined) wasmImportedFuncCache17 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache17["fM"](p0i32,p1i32,p2f64,p3f64);
-/******/ 						},
-/******/ 						"__wbg_settextContent_2e55253528a044b7": function(p0i32,p1i32,p2i32) {
-/******/ 							if(wasmImportedFuncCache18 === undefined) wasmImportedFuncCache18 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache18["MM"](p0i32,p1i32,p2i32);
-/******/ 						},
-/******/ 						"__wbg_appendChild_6ed236bb79c198df": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache19 === undefined) wasmImportedFuncCache19 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache19["hP"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbg_instanceof_HtmlCanvasElement_fd3cbbe3906d7792": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache20 === undefined) wasmImportedFuncCache20 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache20["Md"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_width_9eb2c66ac9dde633": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache21 === undefined) wasmImportedFuncCache21 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache21["qx"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_setwidth_f3c88eb520ba8d47": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache22 === undefined) wasmImportedFuncCache22 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache22["ox"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbg_height_64e5d4222af3fb90": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache23 === undefined) wasmImportedFuncCache23 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache23["oh"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_setheight_5a1abba41e35c42a": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache24 === undefined) wasmImportedFuncCache24 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache24["ES"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbg_getContext_813df131fcbd6e91": function(p0i32,p1i32,p2i32) {
-/******/ 							if(wasmImportedFuncCache25 === undefined) wasmImportedFuncCache25 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache25["Ae"](p0i32,p1i32,p2i32);
-/******/ 						},
-/******/ 						"__wbg_call_ba36642bd901572b": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache26 === undefined) wasmImportedFuncCache26 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache26["qw"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbindgen_object_clone_ref": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache27 === undefined) wasmImportedFuncCache27 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache27["m_"](p0i32);
-/******/ 						},
-/******/ 						"__wbg_newnoargs_9fdd8f3961dd1bee": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache28 === undefined) wasmImportedFuncCache28 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache28["UL"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbg_self_bb69a836a72ec6e9": function() {
-/******/ 							if(wasmImportedFuncCache29 === undefined) wasmImportedFuncCache29 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache29["tS"]();
-/******/ 						},
-/******/ 						"__wbg_window_3304fc4b414c9693": function() {
-/******/ 							if(wasmImportedFuncCache30 === undefined) wasmImportedFuncCache30 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache30["R$"]();
-/******/ 						},
-/******/ 						"__wbg_globalThis_e0d21cabc6630763": function() {
-/******/ 							if(wasmImportedFuncCache31 === undefined) wasmImportedFuncCache31 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache31["md"]();
-/******/ 						},
-/******/ 						"__wbg_global_8463719227271676": function() {
-/******/ 							if(wasmImportedFuncCache32 === undefined) wasmImportedFuncCache32 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache32["IF"]();
-/******/ 						},
-/******/ 						"__wbindgen_is_undefined": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache33 === undefined) wasmImportedFuncCache33 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache33["XP"](p0i32);
-/******/ 						},
-/******/ 						"__wbindgen_debug_string": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache34 === undefined) wasmImportedFuncCache34 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache34["fY"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbindgen_throw": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache35 === undefined) wasmImportedFuncCache35 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache35["Or"](p0i32,p1i32);
-/******/ 						},
-/******/ 						"__wbindgen_rethrow": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache36 === undefined) wasmImportedFuncCache36 = __webpack_require__.c[718].exports;
-/******/ 							return wasmImportedFuncCache36["nD"](p0i32);
 /******/ 						}
 /******/ 					}
 /******/ 				};
@@ -996,8 +630,8 @@ const defaultConfig = async () => {
 /******/ 		};
 /******/ 		
 /******/ 		var wasmModuleMap = {
-/******/ 			"333": [
-/******/ 				641
+/******/ 			"678": [
+/******/ 				348
 /******/ 			]
 /******/ 		};
 /******/ 		
@@ -1017,7 +651,7 @@ const defaultConfig = async () => {
 /******/ 					promises.push(installedWasmModuleData);
 /******/ 				else {
 /******/ 					var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 					var req = fetch(__webpack_require__.p + "" + {"333":{"641":"951529cf19c1c9b4e6ab"}}[chunkId][wasmModuleId] + ".module.wasm");
+/******/ 					var req = fetch(__webpack_require__.p + "" + {"678":{"348":"8191df37ac42efdeadac"}}[chunkId][wasmModuleId] + ".module.wasm");
 /******/ 					var promise;
 /******/ 					if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 						promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
@@ -1044,7 +678,7 @@ const defaultConfig = async () => {
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(319);
+/******/ 	var __webpack_exports__ = __webpack_require__(730);
 /******/ 	
 /******/ })()
 ;

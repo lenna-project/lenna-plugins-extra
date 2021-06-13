@@ -1,13 +1,16 @@
-define("denoise", [], () => { return /******/ (() => { // webpackBootstrap
+define("text", [], () => { return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 284:
+/***/ 555:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 var moduleMap = {
 	"default": () => {
-		return __webpack_require__.e(319).then(() => (() => ((__webpack_require__(319)))));
+		return Promise.all([__webpack_require__.e(748), __webpack_require__.e(730)]).then(() => (() => ((__webpack_require__(730)))));
+	},
+	"./Widget": () => {
+		return Promise.all([__webpack_require__.e(748), __webpack_require__.e(125)]).then(() => (() => ((__webpack_require__(125)))));
 	}
 };
 var get = (module, getScope) => {
@@ -109,6 +112,27 @@ __webpack_require__.d(exports, {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference all chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".css";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/harmony module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.hmd = (module) => {
@@ -132,7 +156,7 @@ __webpack_require__.d(exports, {
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "@lenna-project/denoise:";
+/******/ 		var dataWebpackPrefix = "@lenna-project/text:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -205,7 +229,7 @@ __webpack_require__.d(exports, {
 /******/ 			// runs all init snippets from all modules reachable
 /******/ 			var scope = __webpack_require__.S[name];
 /******/ 			var warn = (msg) => (typeof console !== "undefined" && console.warn && console.warn(msg));
-/******/ 			var uniqueName = "@lenna-project/denoise";
+/******/ 			var uniqueName = "@lenna-project/text";
 /******/ 			var register = (name, version, factory, eager) => {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -224,6 +248,10 @@ __webpack_require__.d(exports, {
 /******/ 			}
 /******/ 			var promises = [];
 /******/ 			switch(name) {
+/******/ 				case "default": {
+/******/ 					register("vue", "3.0.11", () => (__webpack_require__.e(594).then(() => (() => (__webpack_require__(594))))));
+/******/ 				}
+/******/ 				break;
 /******/ 			}
 /******/ 			if(!promises.length) return initPromises[name] = 1;
 /******/ 			return initPromises[name] = Promise.all(promises).then(() => (initPromises[name] = 1));
@@ -232,7 +260,239 @@ __webpack_require__.d(exports, {
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "https://lenna.app/lenna-plugins-extra/denoise/";
+/******/ 		__webpack_require__.p = "https://lenna.app/lenna-plugins/text/";
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/consumes */
+/******/ 	(() => {
+/******/ 		var parseVersion = (str) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			var p=p=>{return p.split(".").map((p=>{return+p==p?+p:p}))},n=/^([^-+]+)?(?:-([^+]+))?(?:\+(.+))?$/.exec(str),r=n[1]?p(n[1]):[];return n[2]&&(r.length++,r.push.apply(r,p(n[2]))),n[3]&&(r.push([]),r.push.apply(r,p(n[3]))),r;
+/******/ 		}
+/******/ 		var versionLt = (a, b) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			a=parseVersion(a),b=parseVersion(b);for(var r=0;;){if(r>=a.length)return r<b.length&&"u"!=(typeof b[r])[0];var e=a[r],n=(typeof e)[0];if(r>=b.length)return"u"==n;var t=b[r],f=(typeof t)[0];if(n!=f)return"o"==n&&"n"==f||("s"==f||"u"==n);if("o"!=n&&"u"!=n&&e!=t)return e<t;r++}
+/******/ 		}
+/******/ 		var rangeToString = (range) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			var r=range[0],n="";if(1===range.length)return"*";if(r+.5){n+=0==r?">=":-1==r?"<":1==r?"^":2==r?"~":r>0?"=":"!=";for(var e=1,a=1;a<range.length;a++){e--,n+="u"==(typeof(t=range[a]))[0]?"-":(e>0?".":"")+(e=2,t)}return n}var g=[];for(a=1;a<range.length;a++){var t=range[a];g.push(0===t?"not("+o()+")":1===t?"("+o()+" || "+o()+")":2===t?g.pop()+" "+g.pop():rangeToString(t))}return o();function o(){return g.pop().replace(/^\((.+)\)$/,"$1")}
+/******/ 		}
+/******/ 		var satisfy = (range, version) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			if(0 in range){version=parseVersion(version);var e=range[0],r=e<0;r&&(e=-e-1);for(var n=0,i=1,a=!0;;i++,n++){var f,s,g=i<range.length?(typeof range[i])[0]:"";if(n>=version.length||"o"==(s=(typeof(f=version[n]))[0]))return!a||("u"==g?i>e&&!r:""==g!=r);if("u"==s){if(!a||"u"!=g)return!1}else if(a)if(g==s)if(i<=e){if(f!=range[i])return!1}else{if(r?f>range[i]:f<range[i])return!1;f!=range[i]&&(a=!1)}else if("s"!=g&&"n"!=g){if(r||i<=e)return!1;a=!1,i--}else{if(i<=e||s<g!=r)return!1;a=!1}else"s"!=g&&"n"!=g&&(a=!1,i--)}}var t=[],o=t.pop.bind(t);for(n=1;n<range.length;n++){var u=range[n];t.push(1==u?o()|o():2==u?o()&o():u?satisfy(u,version):!o())}return!!o();
+/******/ 		}
+/******/ 		var ensureExistence = (scopeName, key) => {
+/******/ 			var scope = __webpack_require__.S[scopeName];
+/******/ 			if(!scope || !__webpack_require__.o(scope, key)) throw new Error("Shared module " + key + " doesn't exist in shared scope " + scopeName);
+/******/ 			return scope;
+/******/ 		};
+/******/ 		var findVersion = (scope, key) => {
+/******/ 			var versions = scope[key];
+/******/ 			var key = Object.keys(versions).reduce((a, b) => {
+/******/ 				return !a || versionLt(a, b) ? b : a;
+/******/ 			}, 0);
+/******/ 			return key && versions[key]
+/******/ 		};
+/******/ 		var findSingletonVersionKey = (scope, key) => {
+/******/ 			var versions = scope[key];
+/******/ 			return Object.keys(versions).reduce((a, b) => {
+/******/ 				return !a || (!versions[a].loaded && versionLt(a, b)) ? b : a;
+/******/ 			}, 0);
+/******/ 		};
+/******/ 		var getInvalidSingletonVersionMessage = (key, version, requiredVersion) => {
+/******/ 			return "Unsatisfied version " + version + " of shared singleton module " + key + " (required " + rangeToString(requiredVersion) + ")"
+/******/ 		};
+/******/ 		var getSingletonVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 			var version = findSingletonVersionKey(scope, key);
+/******/ 			if (!satisfy(requiredVersion, version)) typeof console !== "undefined" && console.warn && console.warn(getInvalidSingletonVersionMessage(key, version, requiredVersion));
+/******/ 			return get(scope[key][version]);
+/******/ 		};
+/******/ 		var getStrictSingletonVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 			var version = findSingletonVersionKey(scope, key);
+/******/ 			if (!satisfy(requiredVersion, version)) throw new Error(getInvalidSingletonVersionMessage(key, version, requiredVersion));
+/******/ 			return get(scope[key][version]);
+/******/ 		};
+/******/ 		var findValidVersion = (scope, key, requiredVersion) => {
+/******/ 			var versions = scope[key];
+/******/ 			var key = Object.keys(versions).reduce((a, b) => {
+/******/ 				if (!satisfy(requiredVersion, b)) return a;
+/******/ 				return !a || versionLt(a, b) ? b : a;
+/******/ 			}, 0);
+/******/ 			return key && versions[key]
+/******/ 		};
+/******/ 		var getInvalidVersionMessage = (scope, scopeName, key, requiredVersion) => {
+/******/ 			var versions = scope[key];
+/******/ 			return "No satisfying version (" + rangeToString(requiredVersion) + ") of shared module " + key + " found in shared scope " + scopeName + ".\n" +
+/******/ 				"Available versions: " + Object.keys(versions).map((key) => {
+/******/ 				return key + " from " + versions[key].from;
+/******/ 			}).join(", ");
+/******/ 		};
+/******/ 		var getValidVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 			var entry = findValidVersion(scope, key, requiredVersion);
+/******/ 			if(entry) return get(entry);
+/******/ 			throw new Error(getInvalidVersionMessage(scope, scopeName, key, requiredVersion));
+/******/ 		};
+/******/ 		var warnInvalidVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 			typeof console !== "undefined" && console.warn && console.warn(getInvalidVersionMessage(scope, scopeName, key, requiredVersion));
+/******/ 		};
+/******/ 		var get = (entry) => {
+/******/ 			entry.loaded = 1;
+/******/ 			return entry.get()
+/******/ 		};
+/******/ 		var init = (fn) => (function(scopeName, a, b, c) {
+/******/ 			var promise = __webpack_require__.I(scopeName);
+/******/ 			if (promise && promise.then) return promise.then(fn.bind(fn, scopeName, __webpack_require__.S[scopeName], a, b, c));
+/******/ 			return fn(scopeName, __webpack_require__.S[scopeName], a, b, c);
+/******/ 		});
+/******/ 		
+/******/ 		var load = /*#__PURE__*/ init((scopeName, scope, key) => {
+/******/ 			ensureExistence(scopeName, key);
+/******/ 			return get(findVersion(scope, key));
+/******/ 		});
+/******/ 		var loadFallback = /*#__PURE__*/ init((scopeName, scope, key, fallback) => {
+/******/ 			return scope && __webpack_require__.o(scope, key) ? get(findVersion(scope, key)) : fallback();
+/******/ 		});
+/******/ 		var loadVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 			ensureExistence(scopeName, key);
+/******/ 			return get(findValidVersion(scope, key, version) || warnInvalidVersion(scope, scopeName, key, version) || findVersion(scope, key));
+/******/ 		});
+/******/ 		var loadSingletonVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 			ensureExistence(scopeName, key);
+/******/ 			return getSingletonVersion(scope, scopeName, key, version);
+/******/ 		});
+/******/ 		var loadStrictVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 			ensureExistence(scopeName, key);
+/******/ 			return getValidVersion(scope, scopeName, key, version);
+/******/ 		});
+/******/ 		var loadStrictSingletonVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 			ensureExistence(scopeName, key);
+/******/ 			return getStrictSingletonVersion(scope, scopeName, key, version);
+/******/ 		});
+/******/ 		var loadVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 			if(!scope || !__webpack_require__.o(scope, key)) return fallback();
+/******/ 			return get(findValidVersion(scope, key, version) || warnInvalidVersion(scope, scopeName, key, version) || findVersion(scope, key));
+/******/ 		});
+/******/ 		var loadSingletonVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 			if(!scope || !__webpack_require__.o(scope, key)) return fallback();
+/******/ 			return getSingletonVersion(scope, scopeName, key, version);
+/******/ 		});
+/******/ 		var loadStrictVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 			var entry = scope && __webpack_require__.o(scope, key) && findValidVersion(scope, key, version);
+/******/ 			return entry ? get(entry) : fallback();
+/******/ 		});
+/******/ 		var loadStrictSingletonVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 			if(!scope || !__webpack_require__.o(scope, key)) return fallback();
+/******/ 			return getStrictSingletonVersion(scope, scopeName, key, version);
+/******/ 		});
+/******/ 		var installedModules = {};
+/******/ 		var moduleToHandlerMapping = {
+/******/ 			748: () => (loadStrictVersionCheckFallback("default", "vue", [1,3,0,11], () => (__webpack_require__.e(594).then(() => (() => (__webpack_require__(594)))))))
+/******/ 		};
+/******/ 		// no consumes in initial chunks
+/******/ 		var chunkMapping = {
+/******/ 			"748": [
+/******/ 				748
+/******/ 			]
+/******/ 		};
+/******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
+/******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
+/******/ 				chunkMapping[chunkId].forEach((id) => {
+/******/ 					if(__webpack_require__.o(installedModules, id)) return promises.push(installedModules[id]);
+/******/ 					var onFactory = (factory) => {
+/******/ 						installedModules[id] = 0;
+/******/ 						__webpack_require__.m[id] = (module) => {
+/******/ 							delete __webpack_require__.c[id];
+/******/ 							module.exports = factory();
+/******/ 						}
+/******/ 					};
+/******/ 					var onError = (error) => {
+/******/ 						delete installedModules[id];
+/******/ 						__webpack_require__.m[id] = (module) => {
+/******/ 							delete __webpack_require__.c[id];
+/******/ 							throw error;
+/******/ 						}
+/******/ 					};
+/******/ 					try {
+/******/ 						var promise = moduleToHandlerMapping[id]();
+/******/ 						if(promise.then) {
+/******/ 							promises.push(installedModules[id] = promise.then(onFactory).catch(onError));
+/******/ 						} else onFactory(promise);
+/******/ 					} catch(e) { onError(e); }
+/******/ 				});
+/******/ 			}
+/******/ 		}
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/css loading */
+/******/ 	(() => {
+/******/ 		var createStylesheet = (chunkId, fullhref, resolve, reject) => {
+/******/ 			var linkTag = document.createElement("link");
+/******/ 		
+/******/ 			linkTag.rel = "stylesheet";
+/******/ 			linkTag.type = "text/css";
+/******/ 			var onLinkComplete = (event) => {
+/******/ 				// avoid mem leaks.
+/******/ 				linkTag.onerror = linkTag.onload = null;
+/******/ 				if (event.type === 'load') {
+/******/ 					resolve();
+/******/ 				} else {
+/******/ 					var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 					var realHref = event && event.target && event.target.href || fullhref;
+/******/ 					var err = new Error("Loading CSS chunk " + chunkId + " failed.\n(" + realHref + ")");
+/******/ 					err.code = "CSS_CHUNK_LOAD_FAILED";
+/******/ 					err.type = errorType;
+/******/ 					err.request = realHref;
+/******/ 					linkTag.parentNode.removeChild(linkTag)
+/******/ 					reject(err);
+/******/ 				}
+/******/ 			}
+/******/ 			linkTag.onerror = linkTag.onload = onLinkComplete;
+/******/ 			linkTag.href = fullhref;
+/******/ 		
+/******/ 			document.head.appendChild(linkTag);
+/******/ 			return linkTag;
+/******/ 		};
+/******/ 		var findStylesheet = (href, fullhref) => {
+/******/ 			var existingLinkTags = document.getElementsByTagName("link");
+/******/ 			for(var i = 0; i < existingLinkTags.length; i++) {
+/******/ 				var tag = existingLinkTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href") || tag.getAttribute("href");
+/******/ 				if(tag.rel === "stylesheet" && (dataHref === href || dataHref === fullhref)) return tag;
+/******/ 			}
+/******/ 			var existingStyleTags = document.getElementsByTagName("style");
+/******/ 			for(var i = 0; i < existingStyleTags.length; i++) {
+/******/ 				var tag = existingStyleTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href");
+/******/ 				if(dataHref === href || dataHref === fullhref) return tag;
+/******/ 			}
+/******/ 		};
+/******/ 		var loadStylesheet = (chunkId) => {
+/******/ 			return new Promise((resolve, reject) => {
+/******/ 				var href = __webpack_require__.miniCssF(chunkId);
+/******/ 				var fullhref = __webpack_require__.p + href;
+/******/ 				if(findStylesheet(href, fullhref)) return resolve();
+/******/ 				createStylesheet(chunkId, fullhref, resolve, reject);
+/******/ 			});
+/******/ 		}
+/******/ 		// object to store loaded CSS chunks
+/******/ 		var installedCssChunks = {
+/******/ 			547: 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
+/******/ 			var cssChunks = {"125":1,"730":1};
+/******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
+/******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
+/******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
+/******/ 					installedCssChunks[chunkId] = 0;
+/******/ 				}, (e) => {
+/******/ 					delete installedCssChunks[chunkId];
+/******/ 					throw e;
+/******/ 				}));
+/******/ 			}
+/******/ 		};
+/******/ 		
+/******/ 		// no hmr
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -243,7 +503,7 @@ __webpack_require__.d(exports, {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			986: 0
+/******/ 			547: 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -255,7 +515,7 @@ __webpack_require__.d(exports, {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(true) { // all chunks have JS
+/******/ 						if(748 != chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -318,7 +578,7 @@ __webpack_require__.d(exports, {
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunk_lenna_project_denoise"] = self["webpackChunk_lenna_project_denoise"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunk_lenna_project_text"] = self["webpackChunk_lenna_project_text"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
@@ -337,31 +597,31 @@ __webpack_require__.d(exports, {
 /******/ 		var wasmImportedFuncCache4;
 /******/ 		var wasmImportedFuncCache5;
 /******/ 		var wasmImportObjects = {
-/******/ 			746: function() {
+/******/ 			348: function() {
 /******/ 				return {
-/******/ 					"./denoise_bg.js": {
+/******/ 					"./text_bg.js": {
 /******/ 						"__wbindgen_json_parse": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache0 === undefined) wasmImportedFuncCache0 = __webpack_require__.c[959].exports;
+/******/ 							if(wasmImportedFuncCache0 === undefined) wasmImportedFuncCache0 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache0["t$"](p0i32,p1i32);
 /******/ 						},
 /******/ 						"__wbindgen_json_serialize": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache1 === undefined) wasmImportedFuncCache1 = __webpack_require__.c[959].exports;
+/******/ 							if(wasmImportedFuncCache1 === undefined) wasmImportedFuncCache1 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache1["r1"](p0i32,p1i32);
 /******/ 						},
 /******/ 						"__wbindgen_object_drop_ref": function(p0i32) {
-/******/ 							if(wasmImportedFuncCache2 === undefined) wasmImportedFuncCache2 = __webpack_require__.c[959].exports;
+/******/ 							if(wasmImportedFuncCache2 === undefined) wasmImportedFuncCache2 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache2["ug"](p0i32);
 /******/ 						},
 /******/ 						"__wbg_new_59cb74e423758ede": function() {
-/******/ 							if(wasmImportedFuncCache3 === undefined) wasmImportedFuncCache3 = __webpack_require__.c[959].exports;
+/******/ 							if(wasmImportedFuncCache3 === undefined) wasmImportedFuncCache3 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache3["h9"]();
 /******/ 						},
 /******/ 						"__wbg_stack_558ba5917b466edd": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache4 === undefined) wasmImportedFuncCache4 = __webpack_require__.c[959].exports;
+/******/ 							if(wasmImportedFuncCache4 === undefined) wasmImportedFuncCache4 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache4["Dz"](p0i32,p1i32);
 /******/ 						},
 /******/ 						"__wbg_error_4bb6c2a97407129a": function(p0i32,p1i32) {
-/******/ 							if(wasmImportedFuncCache5 === undefined) wasmImportedFuncCache5 = __webpack_require__.c[959].exports;
+/******/ 							if(wasmImportedFuncCache5 === undefined) wasmImportedFuncCache5 = __webpack_require__.c[970].exports;
 /******/ 							return wasmImportedFuncCache5["kF"](p0i32,p1i32);
 /******/ 						}
 /******/ 					}
@@ -370,8 +630,8 @@ __webpack_require__.d(exports, {
 /******/ 		};
 /******/ 		
 /******/ 		var wasmModuleMap = {
-/******/ 			"381": [
-/******/ 				746
+/******/ 			"678": [
+/******/ 				348
 /******/ 			]
 /******/ 		};
 /******/ 		
@@ -391,7 +651,7 @@ __webpack_require__.d(exports, {
 /******/ 					promises.push(installedWasmModuleData);
 /******/ 				else {
 /******/ 					var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 					var req = fetch(__webpack_require__.p + "" + {"381":{"746":"e2e2a2f2ea9a9c202c6a"}}[chunkId][wasmModuleId] + ".module.wasm");
+/******/ 					var req = fetch(__webpack_require__.p + "" + {"678":{"348":"8191df37ac42efdeadac"}}[chunkId][wasmModuleId] + ".module.wasm");
 /******/ 					var promise;
 /******/ 					if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 						promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
@@ -418,7 +678,7 @@ __webpack_require__.d(exports, {
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(284);
+/******/ 	var __webpack_exports__ = __webpack_require__(555);
 /******/ 	
 /******/ 	return __webpack_exports__;
 /******/ })()

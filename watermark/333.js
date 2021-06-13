@@ -10,35 +10,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Rgb": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Ss),
 /* harmony export */   "Rgba": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.y),
 /* harmony export */   "SamplingFilter": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.VY),
-/* harmony export */   "__wbg_appendChild_6ae001e6d3556190": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.DM),
-/* harmony export */   "__wbg_body_0d97f334de622953": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.$n),
-/* harmony export */   "__wbg_call_cb478d88f3068c91": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.YD),
-/* harmony export */   "__wbg_createElement_ba61aad8af6be7f4": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Vi),
-/* harmony export */   "__wbg_data_7db9e348ce1855fa": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.jv),
-/* harmony export */   "__wbg_document_249e9cf340780f93": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__._4),
-/* harmony export */   "__wbg_drawImage_8012170741749614": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.HS),
+/* harmony export */   "__wbg_appendChild_6ed236bb79c198df": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.hP),
+/* harmony export */   "__wbg_body_525168d9e773c3f8": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Vk),
+/* harmony export */   "__wbg_call_ba36642bd901572b": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.qw),
+/* harmony export */   "__wbg_createElement_ac65a6ce60c4812c": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.b6),
+/* harmony export */   "__wbg_data_315524ada7b563f4": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.lj),
+/* harmony export */   "__wbg_document_5aff8cd83ef968f5": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.WB),
+/* harmony export */   "__wbg_drawImage_8335c6778b19d155": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.ax),
 /* harmony export */   "__wbg_error_4bb6c2a97407129a": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.kF),
-/* harmony export */   "__wbg_getContext_d778ffc8203f64ae": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.o1),
-/* harmony export */   "__wbg_getImageData_6e56dc172cd2ed36": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.JF),
-/* harmony export */   "__wbg_globalThis_f0ca0bbb0149cf3d": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.IV),
-/* harmony export */   "__wbg_global_c3c8325ae8c7f1a9": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.VB),
-/* harmony export */   "__wbg_height_872c06b1bc666dd9": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.cl),
-/* harmony export */   "__wbg_height_d9aa5f566b4ad3b1": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.ei),
-/* harmony export */   "__wbg_instanceof_CanvasRenderingContext2d_eea9cd931eb496b7": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.xO),
-/* harmony export */   "__wbg_instanceof_HtmlCanvasElement_e0e251da2aa0b541": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.ke),
-/* harmony export */   "__wbg_instanceof_Window_9c4fd26090e1d029": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.S1),
+/* harmony export */   "__wbg_getContext_813df131fcbd6e91": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Ae),
+/* harmony export */   "__wbg_getImageData_b5842f1d6ce40388": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.AV),
+/* harmony export */   "__wbg_globalThis_e0d21cabc6630763": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.md),
+/* harmony export */   "__wbg_global_8463719227271676": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.IF),
+/* harmony export */   "__wbg_height_3711225374206b37": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Az),
+/* harmony export */   "__wbg_height_64e5d4222af3fb90": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.oh),
+/* harmony export */   "__wbg_instanceof_CanvasRenderingContext2d_779e79c4121aa91b": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.l_),
+/* harmony export */   "__wbg_instanceof_HtmlCanvasElement_fd3cbbe3906d7792": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Md),
+/* harmony export */   "__wbg_instanceof_Window_11e25482011fc506": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.s8),
 /* harmony export */   "__wbg_new_59cb74e423758ede": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.h9),
-/* harmony export */   "__wbg_newnoargs_3efc7bfa69a681f9": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Yu),
-/* harmony export */   "__wbg_newwithu8clampedarrayandsh_daf4b2743e8c858d": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.pj),
-/* harmony export */   "__wbg_putImageData_a0ab6f94c11984ac": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.OI),
-/* harmony export */   "__wbg_self_05c54dcacb623b9a": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.M8),
-/* harmony export */   "__wbg_setheight_5b882973e84fa13c": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.xo),
-/* harmony export */   "__wbg_settextContent_fa342bf9999ed3eb": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.MP),
-/* harmony export */   "__wbg_setwidth_fd251e9da5abcced": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Yw),
+/* harmony export */   "__wbg_newnoargs_9fdd8f3961dd1bee": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.UL),
+/* harmony export */   "__wbg_newwithu8clampedarrayandsh_d5177e9b24f89848": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.QD),
+/* harmony export */   "__wbg_putImageData_67091e6c02209309": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.fM),
+/* harmony export */   "__wbg_self_bb69a836a72ec6e9": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.tS),
+/* harmony export */   "__wbg_setheight_5a1abba41e35c42a": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.ES),
+/* harmony export */   "__wbg_settextContent_2e55253528a044b7": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.MM),
+/* harmony export */   "__wbg_setwidth_f3c88eb520ba8d47": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.ox),
 /* harmony export */   "__wbg_stack_558ba5917b466edd": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Dz),
-/* harmony export */   "__wbg_width_0c52428553322c27": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.tQ),
-/* harmony export */   "__wbg_width_5843e31ec081f978": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.li),
-/* harmony export */   "__wbg_window_9777ce446d12989f": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.JC),
+/* harmony export */   "__wbg_width_5c37496c7c69eaa2": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.zC),
+/* harmony export */   "__wbg_width_9eb2c66ac9dde633": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.qx),
+/* harmony export */   "__wbg_window_3304fc4b414c9693": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.R$),
 /* harmony export */   "__wbindgen_debug_string": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.fY),
 /* harmony export */   "__wbindgen_is_undefined": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.XP),
 /* harmony export */   "__wbindgen_json_parse": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.t$),
@@ -83,7 +83,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "detect_horizontal_lines": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.eY),
 /* harmony export */   "detect_vertical_lines": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.s6),
 /* harmony export */   "dramatic": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.kw),
-/* harmony export */   "edge_detection": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.sW),
+/* harmony export */   "edge_detection": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Yw),
 /* harmony export */   "edge_one": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.lf),
 /* harmony export */   "emboss": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.D$),
 /* harmony export */   "filter": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.hX),
@@ -128,7 +128,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "offset_red": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.MV),
 /* harmony export */   "oil": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.vK),
 /* harmony export */   "open_image": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.mZ),
-/* harmony export */   "padding_bottom": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Ae),
+/* harmony export */   "padding_bottom": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.kg),
 /* harmony export */   "padding_left": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.H_),
 /* harmony export */   "padding_right": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.JG),
 /* harmony export */   "padding_top": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Bf),
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "sepia": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.HI),
 /* harmony export */   "sharpen": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.dF),
 /* harmony export */   "single_channel_grayscale": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.YQ),
-/* harmony export */   "sobel_horizontal": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.WB),
+/* harmony export */   "sobel_horizontal": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Gk),
 /* harmony export */   "sobel_vertical": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.c1),
 /* harmony export */   "solarize": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.x),
 /* harmony export */   "solarize_retimg": () => (/* reexport safe */ _watermark_bg_js__WEBPACK_IMPORTED_MODULE_0__.Qf),
@@ -279,7 +279,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "c": () => (/* binding */ mix_with_colour),
 /* harmony export */   "g$": () => (/* binding */ noise_reduction),
 /* harmony export */   "dF": () => (/* binding */ sharpen),
-/* harmony export */   "sW": () => (/* binding */ edge_detection),
+/* harmony export */   "Yw": () => (/* binding */ edge_detection),
 /* harmony export */   "yR": () => (/* binding */ identity),
 /* harmony export */   "vJ": () => (/* binding */ box_blur),
 /* harmony export */   "zx": () => (/* binding */ gaussian_blur),
@@ -290,7 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "j9": () => (/* binding */ laplace),
 /* harmony export */   "lf": () => (/* binding */ edge_one),
 /* harmony export */   "D$": () => (/* binding */ emboss),
-/* harmony export */   "WB": () => (/* binding */ sobel_horizontal),
+/* harmony export */   "Gk": () => (/* binding */ sobel_horizontal),
 /* harmony export */   "XJ": () => (/* binding */ prewitt_horizontal),
 /* harmony export */   "c1": () => (/* binding */ sobel_vertical),
 /* harmony export */   "d1": () => (/* binding */ crop),
@@ -304,7 +304,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "H_": () => (/* binding */ padding_left),
 /* harmony export */   "JG": () => (/* binding */ padding_right),
 /* harmony export */   "Bf": () => (/* binding */ padding_top),
-/* harmony export */   "Ae": () => (/* binding */ padding_bottom),
+/* harmony export */   "kg": () => (/* binding */ padding_bottom),
 /* harmony export */   "VY": () => (/* binding */ SamplingFilter),
 /* harmony export */   "nt": () => (/* binding */ PhotonImage),
 /* harmony export */   "Ss": () => (/* binding */ Rgb),
@@ -315,33 +315,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "h9": () => (/* binding */ __wbg_new_59cb74e423758ede),
 /* harmony export */   "Dz": () => (/* binding */ __wbg_stack_558ba5917b466edd),
 /* harmony export */   "kF": () => (/* binding */ __wbg_error_4bb6c2a97407129a),
-/* harmony export */   "S1": () => (/* binding */ __wbg_instanceof_Window_9c4fd26090e1d029),
-/* harmony export */   "_4": () => (/* binding */ __wbg_document_249e9cf340780f93),
-/* harmony export */   "$n": () => (/* binding */ __wbg_body_0d97f334de622953),
-/* harmony export */   "Vi": () => (/* binding */ __wbg_createElement_ba61aad8af6be7f4),
-/* harmony export */   "tQ": () => (/* binding */ __wbg_width_0c52428553322c27),
-/* harmony export */   "ei": () => (/* binding */ __wbg_height_d9aa5f566b4ad3b1),
-/* harmony export */   "jv": () => (/* binding */ __wbg_data_7db9e348ce1855fa),
-/* harmony export */   "pj": () => (/* binding */ __wbg_newwithu8clampedarrayandsh_daf4b2743e8c858d),
-/* harmony export */   "xO": () => (/* binding */ __wbg_instanceof_CanvasRenderingContext2d_eea9cd931eb496b7),
-/* harmony export */   "HS": () => (/* binding */ __wbg_drawImage_8012170741749614),
-/* harmony export */   "JF": () => (/* binding */ __wbg_getImageData_6e56dc172cd2ed36),
-/* harmony export */   "OI": () => (/* binding */ __wbg_putImageData_a0ab6f94c11984ac),
-/* harmony export */   "MP": () => (/* binding */ __wbg_settextContent_fa342bf9999ed3eb),
-/* harmony export */   "DM": () => (/* binding */ __wbg_appendChild_6ae001e6d3556190),
-/* harmony export */   "ke": () => (/* binding */ __wbg_instanceof_HtmlCanvasElement_e0e251da2aa0b541),
-/* harmony export */   "li": () => (/* binding */ __wbg_width_5843e31ec081f978),
-/* harmony export */   "Yw": () => (/* binding */ __wbg_setwidth_fd251e9da5abcced),
-/* harmony export */   "cl": () => (/* binding */ __wbg_height_872c06b1bc666dd9),
-/* harmony export */   "xo": () => (/* binding */ __wbg_setheight_5b882973e84fa13c),
-/* harmony export */   "o1": () => (/* binding */ __wbg_getContext_d778ffc8203f64ae),
-/* harmony export */   "YD": () => (/* binding */ __wbg_call_cb478d88f3068c91),
+/* harmony export */   "s8": () => (/* binding */ __wbg_instanceof_Window_11e25482011fc506),
+/* harmony export */   "WB": () => (/* binding */ __wbg_document_5aff8cd83ef968f5),
+/* harmony export */   "Vk": () => (/* binding */ __wbg_body_525168d9e773c3f8),
+/* harmony export */   "b6": () => (/* binding */ __wbg_createElement_ac65a6ce60c4812c),
+/* harmony export */   "zC": () => (/* binding */ __wbg_width_5c37496c7c69eaa2),
+/* harmony export */   "Az": () => (/* binding */ __wbg_height_3711225374206b37),
+/* harmony export */   "lj": () => (/* binding */ __wbg_data_315524ada7b563f4),
+/* harmony export */   "QD": () => (/* binding */ __wbg_newwithu8clampedarrayandsh_d5177e9b24f89848),
+/* harmony export */   "l_": () => (/* binding */ __wbg_instanceof_CanvasRenderingContext2d_779e79c4121aa91b),
+/* harmony export */   "ax": () => (/* binding */ __wbg_drawImage_8335c6778b19d155),
+/* harmony export */   "AV": () => (/* binding */ __wbg_getImageData_b5842f1d6ce40388),
+/* harmony export */   "fM": () => (/* binding */ __wbg_putImageData_67091e6c02209309),
+/* harmony export */   "MM": () => (/* binding */ __wbg_settextContent_2e55253528a044b7),
+/* harmony export */   "hP": () => (/* binding */ __wbg_appendChild_6ed236bb79c198df),
+/* harmony export */   "Md": () => (/* binding */ __wbg_instanceof_HtmlCanvasElement_fd3cbbe3906d7792),
+/* harmony export */   "qx": () => (/* binding */ __wbg_width_9eb2c66ac9dde633),
+/* harmony export */   "ox": () => (/* binding */ __wbg_setwidth_f3c88eb520ba8d47),
+/* harmony export */   "oh": () => (/* binding */ __wbg_height_64e5d4222af3fb90),
+/* harmony export */   "ES": () => (/* binding */ __wbg_setheight_5a1abba41e35c42a),
+/* harmony export */   "Ae": () => (/* binding */ __wbg_getContext_813df131fcbd6e91),
+/* harmony export */   "qw": () => (/* binding */ __wbg_call_ba36642bd901572b),
 /* harmony export */   "m_": () => (/* binding */ __wbindgen_object_clone_ref),
-/* harmony export */   "Yu": () => (/* binding */ __wbg_newnoargs_3efc7bfa69a681f9),
-/* harmony export */   "M8": () => (/* binding */ __wbg_self_05c54dcacb623b9a),
-/* harmony export */   "JC": () => (/* binding */ __wbg_window_9777ce446d12989f),
-/* harmony export */   "IV": () => (/* binding */ __wbg_globalThis_f0ca0bbb0149cf3d),
-/* harmony export */   "VB": () => (/* binding */ __wbg_global_c3c8325ae8c7f1a9),
+/* harmony export */   "UL": () => (/* binding */ __wbg_newnoargs_9fdd8f3961dd1bee),
+/* harmony export */   "tS": () => (/* binding */ __wbg_self_bb69a836a72ec6e9),
+/* harmony export */   "R$": () => (/* binding */ __wbg_window_3304fc4b414c9693),
+/* harmony export */   "md": () => (/* binding */ __wbg_globalThis_e0d21cabc6630763),
+/* harmony export */   "IF": () => (/* binding */ __wbg_global_8463719227271676),
 /* harmony export */   "XP": () => (/* binding */ __wbindgen_is_undefined),
 /* harmony export */   "fY": () => (/* binding */ __wbindgen_debug_string),
 /* harmony export */   "Or": () => (/* binding */ __wbindgen_throw),
@@ -2869,15 +2869,12 @@ function isLikeNone(x) {
     return x === undefined || x === null;
 }
 
-function handleError(f) {
-    return function () {
-        try {
-            return f.apply(this, arguments);
-
-        } catch (e) {
-            _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_exn_store(addHeapObject(e));
-        }
-    };
+function handleError(f, args) {
+    try {
+        return f.apply(this, args);
+    } catch (e) {
+        _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_exn_store(addHeapObject(e));
+    }
 }
 
 let cachegetUint8ClampedMemory0 = null;
@@ -3896,7 +3893,7 @@ class Rgba {
     }
 }
 
-const __wbindgen_json_serialize = function(arg0, arg1) {
+function __wbindgen_json_serialize(arg0, arg1) {
     const obj = getObject(arg1);
     var ret = JSON.stringify(obj === undefined ? null : obj);
     var ptr0 = passStringToWasm0(ret, _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_malloc, _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_realloc);
@@ -3905,21 +3902,21 @@ const __wbindgen_json_serialize = function(arg0, arg1) {
     getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
-const __wbindgen_object_drop_ref = function(arg0) {
+function __wbindgen_object_drop_ref(arg0) {
     takeObject(arg0);
 };
 
-const __wbindgen_json_parse = function(arg0, arg1) {
+function __wbindgen_json_parse(arg0, arg1) {
     var ret = JSON.parse(getStringFromWasm0(arg0, arg1));
     return addHeapObject(ret);
 };
 
-const __wbg_new_59cb74e423758ede = function() {
+function __wbg_new_59cb74e423758ede() {
     var ret = new Error();
     return addHeapObject(ret);
 };
 
-const __wbg_stack_558ba5917b466edd = function(arg0, arg1) {
+function __wbg_stack_558ba5917b466edd(arg0, arg1) {
     var ret = getObject(arg1).stack;
     var ptr0 = passStringToWasm0(ret, _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_malloc, _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_realloc);
     var len0 = WASM_VECTOR_LEN;
@@ -3927,7 +3924,7 @@ const __wbg_stack_558ba5917b466edd = function(arg0, arg1) {
     getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
-const __wbg_error_4bb6c2a97407129a = function(arg0, arg1) {
+function __wbg_error_4bb6c2a97407129a(arg0, arg1) {
     try {
         console.error(getStringFromWasm0(arg0, arg1));
     } finally {
@@ -3935,37 +3932,37 @@ const __wbg_error_4bb6c2a97407129a = function(arg0, arg1) {
     }
 };
 
-const __wbg_instanceof_Window_9c4fd26090e1d029 = function(arg0) {
+function __wbg_instanceof_Window_11e25482011fc506(arg0) {
     var ret = getObject(arg0) instanceof Window;
     return ret;
 };
 
-const __wbg_document_249e9cf340780f93 = function(arg0) {
+function __wbg_document_5aff8cd83ef968f5(arg0) {
     var ret = getObject(arg0).document;
     return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
 
-const __wbg_body_0d97f334de622953 = function(arg0) {
+function __wbg_body_525168d9e773c3f8(arg0) {
     var ret = getObject(arg0).body;
     return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
 
-const __wbg_createElement_ba61aad8af6be7f4 = handleError(function(arg0, arg1, arg2) {
+function __wbg_createElement_ac65a6ce60c4812c() { return handleError(function (arg0, arg1, arg2) {
     var ret = getObject(arg0).createElement(getStringFromWasm0(arg1, arg2));
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_width_0c52428553322c27 = function(arg0) {
+function __wbg_width_5c37496c7c69eaa2(arg0) {
     var ret = getObject(arg0).width;
     return ret;
 };
 
-const __wbg_height_d9aa5f566b4ad3b1 = function(arg0) {
+function __wbg_height_3711225374206b37(arg0) {
     var ret = getObject(arg0).height;
     return ret;
 };
 
-const __wbg_data_7db9e348ce1855fa = function(arg0, arg1) {
+function __wbg_data_315524ada7b563f4(arg0, arg1) {
     var ret = getObject(arg1).data;
     var ptr0 = passArray8ToWasm0(ret, _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_malloc);
     var len0 = WASM_VECTOR_LEN;
@@ -3973,107 +3970,107 @@ const __wbg_data_7db9e348ce1855fa = function(arg0, arg1) {
     getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
-const __wbg_newwithu8clampedarrayandsh_daf4b2743e8c858d = handleError(function(arg0, arg1, arg2, arg3) {
+function __wbg_newwithu8clampedarrayandsh_d5177e9b24f89848() { return handleError(function (arg0, arg1, arg2, arg3) {
     var ret = new ImageData(getClampedArrayU8FromWasm0(arg0, arg1), arg2 >>> 0, arg3 >>> 0);
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_instanceof_CanvasRenderingContext2d_eea9cd931eb496b7 = function(arg0) {
+function __wbg_instanceof_CanvasRenderingContext2d_779e79c4121aa91b(arg0) {
     var ret = getObject(arg0) instanceof CanvasRenderingContext2D;
     return ret;
 };
 
-const __wbg_drawImage_8012170741749614 = handleError(function(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
+function __wbg_drawImage_8335c6778b19d155() { return handleError(function (arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
     getObject(arg0).drawImage(getObject(arg1), arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-});
+}, arguments) };
 
-const __wbg_getImageData_6e56dc172cd2ed36 = handleError(function(arg0, arg1, arg2, arg3, arg4) {
+function __wbg_getImageData_b5842f1d6ce40388() { return handleError(function (arg0, arg1, arg2, arg3, arg4) {
     var ret = getObject(arg0).getImageData(arg1, arg2, arg3, arg4);
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_putImageData_a0ab6f94c11984ac = handleError(function(arg0, arg1, arg2, arg3) {
+function __wbg_putImageData_67091e6c02209309() { return handleError(function (arg0, arg1, arg2, arg3) {
     getObject(arg0).putImageData(getObject(arg1), arg2, arg3);
-});
+}, arguments) };
 
-const __wbg_settextContent_fa342bf9999ed3eb = function(arg0, arg1, arg2) {
+function __wbg_settextContent_2e55253528a044b7(arg0, arg1, arg2) {
     getObject(arg0).textContent = arg1 === 0 ? undefined : getStringFromWasm0(arg1, arg2);
 };
 
-const __wbg_appendChild_6ae001e6d3556190 = handleError(function(arg0, arg1) {
+function __wbg_appendChild_6ed236bb79c198df() { return handleError(function (arg0, arg1) {
     var ret = getObject(arg0).appendChild(getObject(arg1));
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_instanceof_HtmlCanvasElement_e0e251da2aa0b541 = function(arg0) {
+function __wbg_instanceof_HtmlCanvasElement_fd3cbbe3906d7792(arg0) {
     var ret = getObject(arg0) instanceof HTMLCanvasElement;
     return ret;
 };
 
-const __wbg_width_5843e31ec081f978 = function(arg0) {
+function __wbg_width_9eb2c66ac9dde633(arg0) {
     var ret = getObject(arg0).width;
     return ret;
 };
 
-const __wbg_setwidth_fd251e9da5abcced = function(arg0, arg1) {
+function __wbg_setwidth_f3c88eb520ba8d47(arg0, arg1) {
     getObject(arg0).width = arg1 >>> 0;
 };
 
-const __wbg_height_872c06b1bc666dd9 = function(arg0) {
+function __wbg_height_64e5d4222af3fb90(arg0) {
     var ret = getObject(arg0).height;
     return ret;
 };
 
-const __wbg_setheight_5b882973e84fa13c = function(arg0, arg1) {
+function __wbg_setheight_5a1abba41e35c42a(arg0, arg1) {
     getObject(arg0).height = arg1 >>> 0;
 };
 
-const __wbg_getContext_d778ffc8203f64ae = handleError(function(arg0, arg1, arg2) {
+function __wbg_getContext_813df131fcbd6e91() { return handleError(function (arg0, arg1, arg2) {
     var ret = getObject(arg0).getContext(getStringFromWasm0(arg1, arg2));
     return isLikeNone(ret) ? 0 : addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_call_cb478d88f3068c91 = handleError(function(arg0, arg1) {
+function __wbg_call_ba36642bd901572b() { return handleError(function (arg0, arg1) {
     var ret = getObject(arg0).call(getObject(arg1));
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbindgen_object_clone_ref = function(arg0) {
+function __wbindgen_object_clone_ref(arg0) {
     var ret = getObject(arg0);
     return addHeapObject(ret);
 };
 
-const __wbg_newnoargs_3efc7bfa69a681f9 = function(arg0, arg1) {
+function __wbg_newnoargs_9fdd8f3961dd1bee(arg0, arg1) {
     var ret = new Function(getStringFromWasm0(arg0, arg1));
     return addHeapObject(ret);
 };
 
-const __wbg_self_05c54dcacb623b9a = handleError(function() {
+function __wbg_self_bb69a836a72ec6e9() { return handleError(function () {
     var ret = self.self;
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_window_9777ce446d12989f = handleError(function() {
+function __wbg_window_3304fc4b414c9693() { return handleError(function () {
     var ret = window.window;
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_globalThis_f0ca0bbb0149cf3d = handleError(function() {
+function __wbg_globalThis_e0d21cabc6630763() { return handleError(function () {
     var ret = globalThis.globalThis;
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbg_global_c3c8325ae8c7f1a9 = handleError(function() {
+function __wbg_global_8463719227271676() { return handleError(function () {
     var ret = __webpack_require__.g.global;
     return addHeapObject(ret);
-});
+}, arguments) };
 
-const __wbindgen_is_undefined = function(arg0) {
+function __wbindgen_is_undefined(arg0) {
     var ret = getObject(arg0) === undefined;
     return ret;
 };
 
-const __wbindgen_debug_string = function(arg0, arg1) {
+function __wbindgen_debug_string(arg0, arg1) {
     var ret = debugString(getObject(arg1));
     var ptr0 = passStringToWasm0(ret, _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_malloc, _watermark_bg_wasm__WEBPACK_IMPORTED_MODULE_0__.__wbindgen_realloc);
     var len0 = WASM_VECTOR_LEN;
@@ -4081,11 +4078,11 @@ const __wbindgen_debug_string = function(arg0, arg1) {
     getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
-const __wbindgen_throw = function(arg0, arg1) {
+function __wbindgen_throw(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
 };
 
-const __wbindgen_rethrow = function(arg0) {
+function __wbindgen_rethrow(arg0) {
     throw takeObject(arg0);
 };
 
