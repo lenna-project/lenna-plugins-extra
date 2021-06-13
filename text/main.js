@@ -2,7 +2,7 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 430:
+/***/ 447:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 
@@ -10,11 +10,11 @@
 
 // EXTERNAL MODULE: consume shared module (default) vue@^3.0.11 (strict) (fallback: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js)
 var runtime_dom_esm_bundler_js_ = __webpack_require__(748);
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=0849d5f0&scoped=true
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[1]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=template&id=3b372be5&scoped=true
 
-const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-0849d5f0")
+const _withId = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.withScopeId)("data-v-3b372be5")
 
-;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-0849d5f0")
+;(0,runtime_dom_esm_bundler_js_.pushScopeId)("data-v-3b372be5")
 const _hoisted_1 = { class: "plugin-config" }
 const _hoisted_2 = /*#__PURE__*/(0,runtime_dom_esm_bundler_js_.createVNode)("br", null, null, -1)
 ;(0,runtime_dom_esm_bundler_js_.popScopeId)()
@@ -31,7 +31,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
     _hoisted_2
   ]))
 })
-;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=0849d5f0&scoped=true
+;// CONCATENATED MODULE: ./src/Widget.vue?vue&type=template&id=3b372be5&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Widget.vue?vue&type=script&lang=js
 
@@ -55,6 +55,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
     },
   },
   created() {
+    this.text = this.defaultConfig.text;
     this.updateConfig();
   },
 }));
@@ -68,7 +69,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
 
 ;
 Widgetvue_type_script_lang_js.render = render
-Widgetvue_type_script_lang_js.__scopeId = "data-v-0849d5f0"
+Widgetvue_type_script_lang_js.__scopeId = "data-v-3b372be5"
 
 /* harmony default export */ const Widget = ((/* unused pure expression or super */ null && (script)));
 
@@ -83,7 +84,7 @@ Widgetvue_type_script_lang_js.__scopeId = "data-v-0849d5f0"
 ;// CONCATENATED MODULE: ./assets/text.png
 /* harmony default export */ const assets_text = (__webpack_require__.p + "ce33068a9c9195960b4cf16d2d98319b.png");
 // EXTERNAL MODULE: ./src/Widget.vue + 4 modules
-var src_Widget = __webpack_require__(430);
+var src_Widget = __webpack_require__(447);
 ;// CONCATENATED MODULE: ./src/index.js
 const pkg = __webpack_require__.e(/* import() */ 678).then(__webpack_require__.bind(__webpack_require__, 678));
 
@@ -503,7 +504,7 @@ const icon = () => {
 /******/ 		var installedChunks = {
 /******/ 			179: 0,
 /******/ 			730: 0,
-/******/ 			430: 0,
+/******/ 			447: 0,
 /******/ 			748: 0
 /******/ 		};
 /******/ 		

@@ -1,4 +1,4 @@
-(self["webpackChunk_lenna_project_text"] = self["webpackChunk_lenna_project_text"] || []).push([[730,447],{
+(self["webpackChunk_lenna_project_text"] = self["webpackChunk_lenna_project_text"] || []).push([[447],{
 
 /***/ 447:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -77,51 +77,7 @@ Widgetvue_type_script_lang_js.__scopeId = "data-v-3b372be5"
 
 /* harmony default export */ const Widget = (Widgetvue_type_script_lang_js);
 
-/***/ }),
-
-/***/ 730:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "defaultConfig": () => (/* binding */ defaultConfig),
-  "description": () => (/* binding */ description),
-  "icon": () => (/* binding */ icon),
-  "name": () => (/* binding */ src_name),
-  "process": () => (/* binding */ process),
-  "processor": () => (/* binding */ processor),
-  "ui": () => (/* binding */ ui)
-});
-
-;// CONCATENATED MODULE: ./assets/text.png
-/* harmony default export */ const assets_text = (__webpack_require__.p + "ce33068a9c9195960b4cf16d2d98319b.png");
-// EXTERNAL MODULE: ./src/Widget.vue + 4 modules
-var Widget = __webpack_require__(447);
-;// CONCATENATED MODULE: ./src/index.js
-const pkg = __webpack_require__.e(/* import() */ 678).then(__webpack_require__.bind(__webpack_require__, 678));
-
-
-
-const ui = Widget.default;
-const processor = pkg;
-const src_name = () => "text";
-const description = () => "Writes text on images.";
-const process = async (config, image) => {
-  return __webpack_require__.e(/* import() */ 678).then(__webpack_require__.bind(__webpack_require__, 678)).then(processor => processor.process(config, image));
-};
-const defaultConfig = async () => {
-  return { text: "Hello World!" };
-};
-const icon = () => {
-  return assets_text;
-}
-
-
 /***/ })
 
 }]);
-//# sourceMappingURL=730.js.map
+//# sourceMappingURL=447.js.map
