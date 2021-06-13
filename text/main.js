@@ -323,7 +323,7 @@ const icon = () => {
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "https://lenna.app/lenna-plugins/text/";
+/******/ 		__webpack_require__.p = "https://lenna.app/lenna-plugins-extra/text/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/consumes */
