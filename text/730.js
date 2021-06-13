@@ -112,7 +112,7 @@ const process = async (config, image) => {
   return __webpack_require__.e(/* import() */ 678).then(__webpack_require__.bind(__webpack_require__, 678)).then(processor => processor.process(config, image));
 };
 const defaultConfig = async () => {
-  return { clear: false };
+  return { text: "Hello World!" };
 };
 const icon = () => {
   return assets_text;
