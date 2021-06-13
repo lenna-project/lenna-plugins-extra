@@ -1,13 +1,13 @@
 <template>
   <div class="plugin-config">
-    <input v-model="text" placeholder="text" /><br />
+    <input v-model="text" placeholder="text" @change="updateConfig()" /><br />
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "ExifWidget",
+  name: "TextWidget",
   props: {
     defaultConfig: Object,
   },
@@ -25,6 +25,7 @@ export default defineComponent({
     },
   },
   created() {
+    this.text = this.defaultConfig.text;
     this.updateConfig();
   },
 });

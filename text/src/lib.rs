@@ -78,7 +78,6 @@ impl Processor for Text {
         image: &mut Box<lenna_core::LennaImage>,
     ) -> Result<(), Box<dyn std::error::Error>> {
         self.config = serde_json::from_value(config.config).unwrap();
-        self.process_exif(&mut image.exif).unwrap();
         self.process_image(&mut image.image).unwrap();
         Ok(())
     }
@@ -101,5 +100,20 @@ mod tests {
     fn default() {
         let text = Text::default();
         assert_eq!(text.name(), "text");
+    }
+
+    #[test]
+    fn process() {
+        let mut text = Text::default();
+        let config = ProcessorConfig {
+            id: "text".into(),
+            config: text.default_config(),
+        };
+        let mut image =
+            Box::new(lenna_core::io::read::read_from_file("../lenna.png".into()).unwrap());
+
+        text.process(config, &mut image).unwrap();
+        image.name = "text_test".to_string();
+        lenna_core::io::write::write_to_file(&image, image::ImageOutputFormat::Jpeg(80)).unwrap();
     }
 }
