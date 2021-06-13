@@ -20,16 +20,17 @@ pub struct Text {
 #[derive(Clone, serde::Serialize, serde::Deserialize)]
 struct Config {
     text: String,
+    x: u32,
+    y: u32
 }
 
 impl Default for Config {
     fn default() -> Self {
         Config {
-            text: "Hello World!".to_string(),
+            text: "Hello World!".to_string(), x: 0, y: 0
         }
     }
 }
-
 
 impl ImageProcessor for Text {
     fn process_image(
@@ -46,7 +47,7 @@ impl ImageProcessor for Text {
             x: height * 2.0,
             y: height,
         };
-        draw_text_mut(&mut img, Rgba([0u8, 0u8, 0u8, 255u8]), 0, 0, scale, &font, &self.config.text);
+        draw_text_mut(&mut img, Rgba([0u8, 0u8, 0u8, 255u8]), self.config.x, self.config.y, scale, &font, &self.config.text);
         *image = Box::new(img);
         Ok(())
     }

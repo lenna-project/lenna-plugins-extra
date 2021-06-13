@@ -10,7 +10,7 @@ export const process = async (config, image) => {
   return import('../pkg').then(processor => processor.process(config, image));
 };
 export const defaultConfig = async () => {
-  return { text: "Hello World!" };
+  return { text: "Hello World!", x: 0, y: 0 };
 };
 export const icon = () => {
   return textIcon;
