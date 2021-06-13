@@ -1,61 +1,67 @@
-use image::{DynamicImage, GenericImageView};
-use photon_rs::{base64_to_image, helpers::dyn_image_from_raw, multiple::watermark, PhotonImage};
-
+use image::{DynamicImage, Rgba};
+use imageproc::drawing::{draw_text_mut};
+use rusttype::{Font, Scale};
 use lenna_core::plugins::PluginRegistrar;
+use lenna_core::ProcessorConfig;
 use lenna_core::{ExifProcessor, ImageProcessor, Processor};
 
-use lenna_core::ProcessorConfig;
-
 extern "C" fn register(registrar: &mut dyn PluginRegistrar) {
-    registrar.add_plugin(Box::new(Watermark::default()));
+    registrar.add_plugin(Box::new(Text::default()));
 }
 
 #[cfg(feature = "plugin")]
 lenna_core::export_plugin!(register);
 
 #[derive(Default, Clone)]
-pub struct Watermark {
+pub struct Text {
     config: Config,
 }
 
 #[derive(Clone, serde::Serialize, serde::Deserialize)]
 struct Config {
-    watermark: String,
-    x: u32,
-    y: u32,
+    text: String,
 }
 
 impl Default for Config {
     fn default() -> Self {
-        Config { watermark: "iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAQAAAAD+Fb1AAAAEElEQVR42mP8X88ABoy4GQB+1gX98SFnuAAAAABJRU5ErkJggg==".to_string(), x: 0, y: 0 }
+        Config {
+            text: "Hello World!".to_string(),
+        }
     }
 }
 
-impl ImageProcessor for Watermark {
+
+impl ImageProcessor for Text {
     fn process_image(
         &self,
         image: &mut Box<DynamicImage>,
     ) -> Result<(), Box<dyn std::error::Error>> {
-        let water_mark = base64_to_image(&self.config.watermark);
 
-        let img = DynamicImage::ImageRgba8(image.to_rgba8());
-        let mut img: PhotonImage = PhotonImage::new(img.to_bytes(), image.width(), image.height());
-        watermark(&mut img, &water_mark, self.config.x, self.config.y);
-        let img = dyn_image_from_raw(&img);
+        let mut img = DynamicImage::ImageRgba8(image.to_rgba8());
+        let font = Vec::from(include_bytes!("../assets/DejaVuSans.ttf") as &[u8]);
+        let font = Font::try_from_vec(font).unwrap();
+    
+        let height = 12.4;
+        let scale = Scale {
+            x: height * 2.0,
+            y: height,
+        };
+        draw_text_mut(&mut img, Rgba([0u8, 0u8, 0u8, 255u8]), 0, 0, scale, &font, &self.config.text);
         *image = Box::new(img);
         Ok(())
     }
 }
 
-impl ExifProcessor for Watermark {}
 
-impl Processor for Watermark {
+impl ExifProcessor for Text {}
+
+impl Processor for Text {
     fn name(&self) -> String {
-        "watermark".into()
+        "text".into()
     }
 
     fn title(&self) -> String {
-        "Watermark".into()
+        "Text".into()
     }
 
     fn author(&self) -> String {
@@ -63,7 +69,7 @@ impl Processor for Watermark {
     }
 
     fn description(&self) -> String {
-        "Plugin to watermark images.".into()
+        "Plugin to write text on images.".into()
     }
 
     fn process(
@@ -85,7 +91,7 @@ impl Processor for Watermark {
 #[cfg(target_arch = "wasm32")]
 use wasm_bindgen::prelude::*;
 #[cfg(target_arch = "wasm32")]
-lenna_core::export_wasm_plugin!(Watermark);
+lenna_core::export_wasm_plugin!(Text);
 
 #[cfg(test)]
 mod tests {
@@ -93,7 +99,7 @@ mod tests {
 
     #[test]
     fn default() {
-        let watermark = Watermark::default();
-        assert_eq!(watermark.name(), "watermark");
+        let text = Text::default();
+        assert_eq!(text.name(), "text");
     }
 }

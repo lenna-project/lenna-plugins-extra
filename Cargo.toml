@@ -1,2 +1,2 @@
 [workspace]
-members = ["denoise", "watermark"]
+members = ["denoise", "text", "watermark"]
