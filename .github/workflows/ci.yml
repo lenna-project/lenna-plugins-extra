@@ -50,6 +50,17 @@ jobs:
       - run: mv ./watermark/dist ./public/watermark
 
       - run: cp plugins.json public/
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - run: pip install maturin
+      - name: build python wheel 
+        run: cd lenna-plugins-extra-py && maturin build --manylinux=off --cargo-extra-args="--features=python"
+
+      - run: mv lenna-plugins-extra-py/target/wheels/lenna_plugins_extra_py*cp38-cp38*.whl ./public/
+
       - run: ls public/
 
       - name: Deploy Documentation
