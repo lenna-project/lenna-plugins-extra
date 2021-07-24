@@ -1,6 +1,7 @@
 {
     "plugins": {
-	"denoise": "https://lenna.app/lenna-plugins-extra/denoise/remoteEntry.js",
+        "denoise": "https://lenna.app/lenna-plugins-extra/denoise/remoteEntry.js",
+        "timestamp": "https://lenna.app/lenna-plugins-extra/timestamp/remoteEntry.js",
         "watermark": "https://lenna.app/lenna-plugins-extra/watermark/remoteEntry.js"
     }
 }

@@ -372,6 +372,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
+name = "lenna-timestamp"
+version = "0.1.0"
+dependencies = [
+ "console_error_panic_hook",
+ "image",
+ "kamadak-exif",
+ "lenna_core",
+ "serde",
+ "serde_json",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "lenna_core"
 version = "0.1.0"
 source = "git+https://github.com/lenna-project/lenna-core?branch=main#36e9a8a93682169163f8e323338612a6c5554a83"

@@ -17,6 +17,7 @@ jobs:
 
       - run: wasm-pack build denoise
       - run: wasm-pack build text
+      - run: wasm-pack build timestamp
       - run: wasm-pack build watermark
 
       - name: Use Node.js
@@ -31,6 +32,9 @@ jobs:
         working-directory: text
       - name: Install npm dependencies
         run: npm ci
+        working-directory: timestamp
+      - name: Install npm dependencies
+        run: npm ci
         working-directory: watermark
 
       - name: Build denoise app
@@ -39,6 +43,9 @@ jobs:
       - name: Build text app
         run: NODE_ENV=production npm run build --if-present
         working-directory: text
+      - name: Build timestamp app
+        run: NODE_ENV=production npm run build --if-present
+        working-directory: timestamp
       - name: Build watermark app
         run: NODE_ENV=production npm run build --if-present
         working-directory: watermark
@@ -47,6 +54,7 @@ jobs:
 
       - run: mv ./denoise/dist ./public/denoise
       - run: mv ./text/dist ./public/text
+      - run: mv ./timestamp/dist ./public/timestamp
       - run: mv ./watermark/dist ./public/watermark
 
       - run: cp plugins.json public/
